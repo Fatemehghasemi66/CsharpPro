@@ -6,8 +6,12 @@ using System.Threading.Tasks;
 
 namespace CsharpPro.Models;
 
-public class Product:User
+public class Product:ProductFunctionality
 {
+    public Product()
+    {
+    }
+
     public Product(string name, decimal price, int count, string brandName)
     {
         Name = name;

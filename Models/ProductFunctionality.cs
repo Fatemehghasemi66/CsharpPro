@@ -6,6 +6,6 @@ using System.Threading.Tasks;
 
 namespace CsharpPro.Models;
 
-internal class ProductFunctionality
+public class ProductFunctionality
 {
 }
