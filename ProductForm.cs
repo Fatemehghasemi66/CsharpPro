@@ -1,4 +1,5 @@
 ﻿using CsharpPro.Models;
+using CsharpPro.Repository;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -45,7 +46,6 @@ public partial class ProductForm : Form
     {
         try
         {
-            Product product = new Product(name: ProNameTextBox.Text, price: decimal.Parse(PriceTextBox.Text), count: int.Parse(CountTextBox.Text), brandName: BrandNameTextBox.Text);
             if (string.IsNullOrEmpty(CountTextBox.Text) || string.IsNullOrEmpty(ProNameTextBox.Text) || string.IsNullOrEmpty(PriceTextBox.Text))
             {
                 MessageLable.BackColor = Color.DarkRed;
@@ -54,17 +54,19 @@ public partial class ProductForm : Form
                 return;
             }
             MessageBox.Show($"Product {ProNameTextBox.Text} was successfully inserted");
-            products = new List<Product>();
-            Product newPro = new Product()
-            {
-                Name = ProNameTextBox.Text,
-                BrandName = BrandNameTextBox.Text,
-                Count = int.Parse(CountTextBox.Text),
-                Price = decimal.Parse(PriceTextBox.Text),
-            };
-            products.Add(product);
+            Product product = new Product(name: ProNameTextBox.Text, price: decimal.Parse(PriceTextBox.Text), count: int.Parse(CountTextBox.Text), brandName: BrandNameTextBox.Text);
+            Product productRepository = new ProductRepository();
+            //products = new List<Product>();
+            //Product newPro = new Product()
+            //{
+            //    Name = ProNameTextBox.Text,
+            //    BrandName = BrandNameTextBox.Text,
+            //    Count = int.Parse(CountTextBox.Text),
+            //    Price = decimal.Parse(PriceTextBox.Text),
+            //};
+           
             ProductGridView.DataSource = null;
-            ProductGridView.DataSource = products;
+            ProductGridView.DataSource = productRepository;
             ProductGridView.Refresh();
 
 

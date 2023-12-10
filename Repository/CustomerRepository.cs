@@ -1,4 +1,5 @@
 ﻿using CsharpPro.Contracts;
+using CsharpPro.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,20 +8,26 @@ using System.Threading.Tasks;
 
 namespace CsharpPro.Repository;
 
-internal class CustomerRepository : BaseRepository
+internal class CustomerRepository : IGenericRepository<Customer>
 {
-    public override bool AddItem<T>(T item)
+    public bool AddItem(Customer item)
     {
         throw new NotImplementedException();
     }
 
-    public override T GetItem<T>()
+    public bool DeleteItem(Customer item)
     {
         throw new NotImplementedException();
     }
 
-    public override List<T> GetItems<T>()
+    public Customer GetById(object id)
     {
         throw new NotImplementedException();
     }
+
+    public List<Customer> GetIAll()
+    {
+        throw new NotImplementedException();
+    }
+
 }

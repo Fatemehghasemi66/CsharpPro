@@ -9,8 +9,7 @@ namespace CsharpPro.Models;
 
 public class User : BaseEntity
 {
-
-
+    public string Gender { get; set; }
     public string FirstName { get; set; }
     public string LastName { get; set; }
     public DateTime BirthDate { get; set; }
@@ -34,4 +33,4 @@ public class User : BaseEntity
             return false;
     }
 }
-    
+
