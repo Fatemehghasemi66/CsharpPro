@@ -15,7 +15,8 @@ namespace CsharpPro;
 
 public partial class ProductForm : Form
 {
-    List<Product> products = default;
+
+
     public ProductForm()
     {
         InitializeComponent();
@@ -23,6 +24,8 @@ public partial class ProductForm : Form
         DateLable.Text = PC.GetYear(DateTime.Now) + "/" + PC.GetMonth(DateTime.Now) + "/" + PC.GetDayOfMonth(DateTime.Now);
         System.Timers.Timer time = new System.Timers.Timer();
         TimeLable.Text = DateTime.Now.Hour + ":" + DateTime.Now.Minute + ":" + DateTime.Now.Second;
+        ProductRepository Productrepository = new ProductRepository();
+        ProductGridView.DataSource = Productrepository.GetIAll(); ;
     }
     public void ClearControl()
     {
@@ -41,8 +44,7 @@ public partial class ProductForm : Form
             }
         }
     }
-
-    private void button1_Click(object sender, EventArgs e)
+    private void SaveButton_Click(object sender, EventArgs e)
     {
         try
         {
@@ -55,21 +57,11 @@ public partial class ProductForm : Form
             }
             MessageBox.Show($"Product {ProNameTextBox.Text} was successfully inserted");
             Product product = new Product(name: ProNameTextBox.Text, price: decimal.Parse(PriceTextBox.Text), count: int.Parse(CountTextBox.Text), brandName: BrandNameTextBox.Text);
-            Product productRepository = new ProductRepository();
-            //products = new List<Product>();
-            //Product newPro = new Product()
-            //{
-            //    Name = ProNameTextBox.Text,
-            //    BrandName = BrandNameTextBox.Text,
-            //    Count = int.Parse(CountTextBox.Text),
-            //    Price = decimal.Parse(PriceTextBox.Text),
-            //};
-           
+            ProductRepository productRepository = new ProductRepository();
+            productRepository.AddItem(product);
             ProductGridView.DataSource = null;
-            ProductGridView.DataSource = productRepository;
+            ProductGridView.DataSource = productRepository.GetIAll(); ;
             ProductGridView.Refresh();
-
-
         }
         catch (Exception ex)
         {

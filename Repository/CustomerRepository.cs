@@ -10,17 +10,7 @@ namespace CsharpPro.Repository;
 
 internal class CustomerRepository : IGenericRepository<Customer>
 {
-    public bool AddItem(Customer item)
-    {
-        throw new NotImplementedException();
-    }
-
-    public bool DeleteItem(Customer item)
-    {
-        throw new NotImplementedException();
-    }
-
-    public Customer GetById(object id)
+       public Customer GetById(object id)
     {
         throw new NotImplementedException();
     }
@@ -30,4 +20,28 @@ internal class CustomerRepository : IGenericRepository<Customer>
         throw new NotImplementedException();
     }
 
+    bool IGenericRepository<Customer>.AddItem(Customer item)
+    {
+        throw new NotImplementedException();
+    }
+
+    bool IGenericRepository<Customer>.DeleteItem(int id)
+    {
+        throw new NotImplementedException();
+    }
+
+    Customer IGenericRepository<Customer>.GetById(object id)
+    {
+        throw new NotImplementedException();
+    }
+
+    List<Customer> IGenericRepository<Customer>.GetIAll()
+    {
+        throw new NotImplementedException();
+    }
+
+    bool IGenericRepository<Customer>.UpdateItem(Customer item)
+    {
+        throw new NotImplementedException();
+    }
 }

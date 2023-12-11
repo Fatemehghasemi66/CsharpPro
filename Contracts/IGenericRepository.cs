@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace CsharpPro.Contracts
 {
-    internal interface IGenericRepository<T> where T : class
+    public interface IGenericRepository<T> where T : class
     {
         T GetById(object id);
         List<T> GetIAll();
         bool AddItem(T item);
-        bool DeleteItem(T item);
+        bool UpdateItem(T item);
+        bool DeleteItem(int id);
     }
 }

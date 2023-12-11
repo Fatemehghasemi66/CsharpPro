@@ -19,31 +19,37 @@ public class ProductRepository : IGenericRepository<Product>
         {
             products.Add(new Product()
             {
-                Name =$"Test {i}",
-                Price = i*1500,
-                Count = i*5,
+                Name = $"Test {i}",
+                Price = i * 1500,
+                Count = i * 5,
                 BrandName = "testbrandName",
             });
         }
     }
     public bool AddItem(Product item)
+    
     {
-        throw new NotImplementedException();
+       products.Add(item);
+        return true;
     }
 
-    public bool DeleteItem(Product item)
+    public bool DeleteItem(int id)
     {
         throw new NotImplementedException();
     }
 
     public Product GetById(object id)
     {
-        throw new NotImplementedException();
+        return products.Where(x => x.Id == (int)id).FirstOrDefault();
     }
 
     public List<Product> GetIAll()
     {
-        throw new NotImplementedException();
+       return products;
     }
 
+    public bool UpdateItem(Product item)
+    {
+        throw new NotImplementedException();
+    }
 }
