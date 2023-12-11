@@ -1,5 +1,5 @@
 ﻿using CsharpPro.Contracts;
-using CsharpPro.Models;
+using Microsoft.VisualBasic.ApplicationServices;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,17 +8,11 @@ using System.Threading.Tasks;
 
 namespace CsharpPro.Repository
 {
-    internal class AddressRepository : IGenericRepository<Address>
+    internal class UserRepository : IGenericRepository<User>
     {
-        public static List<Address> Address = new List<Address>();
-        public AddressRepository() 
+        public bool AddItem(User item)
         {
-        }
-
-        public bool AddItem(Address item)
-        {
-            Address.Add(item);
-            return true;
+            throw new NotImplementedException();
         }
 
         public bool DeleteItem(int id)
@@ -26,17 +20,17 @@ namespace CsharpPro.Repository
             throw new NotImplementedException();
         }
 
-        public Address GetById(object id)
+        public User GetById(object id)
         {
             throw new NotImplementedException();
         }
 
-        public List<Address> GetIAll()
+        public List<User> GetIAll()
         {
-            return Address;
+            throw new NotImplementedException();
         }
 
-        public bool UpdateItem(Address item)
+        public bool UpdateItem(User item)
         {
             throw new NotImplementedException();
         }

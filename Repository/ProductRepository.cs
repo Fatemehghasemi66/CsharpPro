@@ -11,20 +11,10 @@ namespace CsharpPro.Repository;
 
 public class ProductRepository : IGenericRepository<Product>
 {
-    List<Product> products = null;
+    public static List<Product> products = new List<Product>();
     public ProductRepository()
     {
-        products = new List<Product>();
-        for (int i = 0; i < 4; i++)
-        {
-            products.Add(new Product()
-            {
-                Name = $"Test {i}",
-                Price = i * 1500,
-                Count = i * 5,
-                BrandName = "testbrandName",
-            });
-        }
+        
     }
     public bool AddItem(Product item)
     
@@ -48,7 +38,27 @@ public class ProductRepository : IGenericRepository<Product>
        return products;
     }
 
-    public bool UpdateItem(Product item)
+    bool IGenericRepository<Product>.AddItem(Product item)
+    {
+        throw new NotImplementedException();
+    }
+
+    bool IGenericRepository<Product>.DeleteItem(int id)
+    {
+        throw new NotImplementedException();
+    }
+
+    Product IGenericRepository<Product>.GetById(object id)
+    {
+        throw new NotImplementedException();
+    }
+
+    List<Product> IGenericRepository<Product>.GetIAll()
+    {
+        throw new NotImplementedException();
+    }
+
+    bool IGenericRepository<Product>.UpdateItem(Product item)
     {
         throw new NotImplementedException();
     }

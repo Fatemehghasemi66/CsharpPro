@@ -50,109 +50,109 @@
             // ProNameLabel
             // 
             ProNameLabel.AutoSize = true;
-            ProNameLabel.Location = new Point(2, 55);
-            ProNameLabel.Margin = new Padding(2, 0, 2, 0);
+            ProNameLabel.Location = new Point(4, 117);
+            ProNameLabel.Margin = new Padding(4, 0, 4, 0);
             ProNameLabel.Name = "ProNameLabel";
-            ProNameLabel.Size = new Size(84, 15);
+            ProNameLabel.Size = new Size(167, 32);
             ProNameLabel.TabIndex = 0;
             ProNameLabel.Text = "Product Name";
             // 
             // ProNameTextBox
             // 
-            ProNameTextBox.Location = new Point(95, 55);
-            ProNameTextBox.Margin = new Padding(2, 1, 2, 1);
+            ProNameTextBox.Location = new Point(176, 117);
+            ProNameTextBox.Margin = new Padding(4, 2, 4, 2);
             ProNameTextBox.Name = "ProNameTextBox";
-            ProNameTextBox.Size = new Size(142, 23);
+            ProNameTextBox.Size = new Size(260, 39);
             ProNameTextBox.TabIndex = 1;
             // 
             // MessageLable
             // 
             MessageLable.AutoSize = true;
-            MessageLable.Location = new Point(122, 8);
-            MessageLable.Margin = new Padding(2, 0, 2, 0);
+            MessageLable.Location = new Point(227, 17);
+            MessageLable.Margin = new Padding(4, 0, 4, 0);
             MessageLable.Name = "MessageLable";
-            MessageLable.Size = new Size(0, 15);
+            MessageLable.Size = new Size(0, 32);
             MessageLable.TabIndex = 28;
             // 
             // TimeLable
             // 
             TimeLable.AutoSize = true;
-            TimeLable.Location = new Point(13, 29);
-            TimeLable.Margin = new Padding(2, 0, 2, 0);
+            TimeLable.Location = new Point(24, 62);
+            TimeLable.Margin = new Padding(4, 0, 4, 0);
             TimeLable.Name = "TimeLable";
-            TimeLable.Size = new Size(0, 15);
+            TimeLable.Size = new Size(0, 32);
             TimeLable.TabIndex = 27;
             // 
             // DateLable
             // 
             DateLable.AutoSize = true;
-            DateLable.Location = new Point(13, 7);
-            DateLable.Margin = new Padding(2, 0, 2, 0);
+            DateLable.Location = new Point(24, 15);
+            DateLable.Margin = new Padding(4, 0, 4, 0);
             DateLable.Name = "DateLable";
-            DateLable.Size = new Size(0, 15);
+            DateLable.Size = new Size(0, 32);
             DateLable.TabIndex = 26;
             // 
             // BrandNameTextBox
             // 
-            BrandNameTextBox.Location = new Point(95, 94);
-            BrandNameTextBox.Margin = new Padding(2, 1, 2, 1);
+            BrandNameTextBox.Location = new Point(176, 201);
+            BrandNameTextBox.Margin = new Padding(4, 2, 4, 2);
             BrandNameTextBox.Name = "BrandNameTextBox";
-            BrandNameTextBox.Size = new Size(142, 23);
+            BrandNameTextBox.Size = new Size(260, 39);
             BrandNameTextBox.TabIndex = 30;
             // 
             // BrandLabel
             // 
             BrandLabel.AutoSize = true;
-            BrandLabel.Location = new Point(13, 94);
-            BrandLabel.Margin = new Padding(2, 0, 2, 0);
+            BrandLabel.Location = new Point(24, 201);
+            BrandLabel.Margin = new Padding(4, 0, 4, 0);
             BrandLabel.Name = "BrandLabel";
-            BrandLabel.Size = new Size(70, 15);
+            BrandLabel.Size = new Size(140, 32);
             BrandLabel.TabIndex = 29;
             BrandLabel.Text = "BrandName";
             // 
             // CountTextBox
             // 
-            CountTextBox.Location = new Point(323, 55);
-            CountTextBox.Margin = new Padding(2, 1, 2, 1);
+            CountTextBox.Location = new Point(600, 117);
+            CountTextBox.Margin = new Padding(4, 2, 4, 2);
             CountTextBox.Name = "CountTextBox";
-            CountTextBox.Size = new Size(151, 23);
+            CountTextBox.Size = new Size(277, 39);
             CountTextBox.TabIndex = 32;
             // 
             // CountLabel
             // 
             CountLabel.AutoSize = true;
-            CountLabel.Location = new Point(266, 58);
-            CountLabel.Margin = new Padding(2, 0, 2, 0);
+            CountLabel.Location = new Point(494, 124);
+            CountLabel.Margin = new Padding(4, 0, 4, 0);
             CountLabel.Name = "CountLabel";
-            CountLabel.Size = new Size(40, 15);
+            CountLabel.Size = new Size(79, 32);
             CountLabel.TabIndex = 31;
             CountLabel.Text = "Count";
             // 
             // PriceTextBox
             // 
-            PriceTextBox.Location = new Point(323, 94);
-            PriceTextBox.Margin = new Padding(2, 1, 2, 1);
+            PriceTextBox.Location = new Point(600, 201);
+            PriceTextBox.Margin = new Padding(4, 2, 4, 2);
             PriceTextBox.Name = "PriceTextBox";
-            PriceTextBox.Size = new Size(151, 23);
+            PriceTextBox.Size = new Size(277, 39);
             PriceTextBox.TabIndex = 34;
             // 
             // PriceLabel
             // 
             PriceLabel.AutoSize = true;
-            PriceLabel.Location = new Point(273, 91);
-            PriceLabel.Margin = new Padding(2, 0, 2, 0);
+            PriceLabel.Location = new Point(507, 194);
+            PriceLabel.Margin = new Padding(4, 0, 4, 0);
             PriceLabel.Name = "PriceLabel";
-            PriceLabel.Size = new Size(33, 15);
+            PriceLabel.Size = new Size(65, 32);
             PriceLabel.TabIndex = 33;
             PriceLabel.Text = "Price";
             // 
             // SaveButton
             // 
             SaveButton.BackColor = SystemColors.ActiveCaption;
-            SaveButton.Location = new Point(558, 89);
-            SaveButton.Margin = new Padding(2, 1, 2, 1);
+            SaveButton.Location = new Point(1036, 190);
+            SaveButton.Margin = new Padding(4, 2, 4, 2);
             SaveButton.Name = "SaveButton";
-            SaveButton.Size = new Size(170, 28);
+            SaveButton.Size = new Size(316, 60);
             SaveButton.TabIndex = 35;
             SaveButton.Text = "Save";
             SaveButton.UseVisualStyleBackColor = false;
@@ -161,10 +161,10 @@
             // ProIdabel
             // 
             ProIdabel.AutoSize = true;
-            ProIdabel.Location = new Point(527, 7);
-            ProIdabel.Margin = new Padding(2, 0, 2, 0);
+            ProIdabel.Location = new Point(979, 15);
+            ProIdabel.Margin = new Padding(4, 0, 4, 0);
             ProIdabel.Name = "ProIdabel";
-            ProIdabel.Size = new Size(59, 15);
+            ProIdabel.Size = new Size(116, 32);
             ProIdabel.TabIndex = 36;
             ProIdabel.Text = "ProductId";
             // 
@@ -172,19 +172,19 @@
             // 
             ProIdLable.AutoSize = true;
             ProIdLable.BackColor = Color.FromArgb(192, 255, 255);
-            ProIdLable.Location = new Point(613, 7);
-            ProIdLable.Margin = new Padding(2, 0, 2, 0);
+            ProIdLable.Location = new Point(1138, 15);
+            ProIdLable.Margin = new Padding(4, 0, 4, 0);
             ProIdLable.Name = "ProIdLable";
-            ProIdLable.Size = new Size(0, 15);
+            ProIdLable.Size = new Size(0, 32);
             ProIdLable.TabIndex = 37;
             // 
             // ActiveProductCheckBox
             // 
             ActiveProductCheckBox.AutoSize = true;
-            ActiveProductCheckBox.Location = new Point(558, 54);
-            ActiveProductCheckBox.Margin = new Padding(2, 1, 2, 1);
+            ActiveProductCheckBox.Location = new Point(1036, 115);
+            ActiveProductCheckBox.Margin = new Padding(4, 2, 4, 2);
             ActiveProductCheckBox.Name = "ActiveProductCheckBox";
-            ActiveProductCheckBox.Size = new Size(101, 19);
+            ActiveProductCheckBox.Size = new Size(193, 36);
             ActiveProductCheckBox.TabIndex = 38;
             ActiveProductCheckBox.Text = "ActiveProduct";
             ActiveProductCheckBox.UseVisualStyleBackColor = true;
@@ -192,19 +192,19 @@
             // ProductGridView
             // 
             ProductGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            ProductGridView.Location = new Point(11, 133);
-            ProductGridView.Margin = new Padding(2, 1, 2, 1);
+            ProductGridView.Location = new Point(20, 284);
+            ProductGridView.Margin = new Padding(4, 2, 4, 2);
             ProductGridView.Name = "ProductGridView";
             ProductGridView.RowHeadersWidth = 82;
             ProductGridView.RowTemplate.Height = 41;
-            ProductGridView.Size = new Size(772, 307);
+            ProductGridView.Size = new Size(1434, 655);
             ProductGridView.TabIndex = 39;
             // 
             // ProductForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(784, 450);
+            ClientSize = new Size(1456, 960);
             Controls.Add(ProductGridView);
             Controls.Add(ActiveProductCheckBox);
             Controls.Add(ProIdLable);
@@ -221,9 +221,10 @@
             Controls.Add(DateLable);
             Controls.Add(ProNameTextBox);
             Controls.Add(ProNameLabel);
-            Margin = new Padding(2, 1, 2, 1);
+            Margin = new Padding(4, 2, 4, 2);
             Name = "ProductForm";
             Text = "ProductForm";
+            Load += ProductForm_Load;
             ((System.ComponentModel.ISupportInitialize)ProductGridView).EndInit();
             ResumeLayout(false);
             PerformLayout();

@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CsharpPro._ٍEnums
+namespace CsharpPro.Enums;
+
+public enum Gender
 {
-    internal class Gender
-    {
-    }
+    MALE = 1, 
+    FEMALE = 2,
+    OTHER= 3,
 }

@@ -1,4 +1,5 @@
 ﻿using CsharpPro.Contracts;
+using CsharpPro.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace CsharpPro.Models;
 
 public class User : BaseEntity
 {
-    public string Gender { get; set; }
+    public Gender Gender { get; set; }
     public string FirstName { get; set; }
     public string LastName { get; set; }
     public DateTime BirthDate { get; set; }

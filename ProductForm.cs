@@ -25,7 +25,7 @@ public partial class ProductForm : Form
         System.Timers.Timer time = new System.Timers.Timer();
         TimeLable.Text = DateTime.Now.Hour + ":" + DateTime.Now.Minute + ":" + DateTime.Now.Second;
         ProductRepository Productrepository = new ProductRepository();
-        ProductGridView.DataSource = Productrepository.GetIAll(); ;
+        ProductGridView.DataSource = Productrepository.GetIAll();
     }
     public void ClearControl()
     {
@@ -72,6 +72,11 @@ public partial class ProductForm : Form
             ClearControl();
         }
 
+
+    }
+
+    private void ProductForm_Load(object sender, EventArgs e)
+    {
 
     }
 }

@@ -8,39 +8,34 @@ using System.Threading.Tasks;
 
 namespace CsharpPro.Repository;
 
-internal class CustomerRepository : IGenericRepository<Customer>
+public class CustomerRepository : IGenericRepository<Customer>
 {
-       public Customer GetById(object id)
+    public static List<Customer> people = new List<Customer>();
+
+    public CustomerRepository()
+        {
+        }
+
+    public bool AddItem(Customer item)
+    {
+        people.Add(item);
+        return true;
+    }
+    public bool DeleteItem(int id)
+    {
+        throw new NotImplementedException();
+    }
+    public Customer GetById(object id)
     {
         throw new NotImplementedException();
     }
 
     public List<Customer> GetIAll()
     {
-        throw new NotImplementedException();
+        return people;
     }
 
-    bool IGenericRepository<Customer>.AddItem(Customer item)
-    {
-        throw new NotImplementedException();
-    }
-
-    bool IGenericRepository<Customer>.DeleteItem(int id)
-    {
-        throw new NotImplementedException();
-    }
-
-    Customer IGenericRepository<Customer>.GetById(object id)
-    {
-        throw new NotImplementedException();
-    }
-
-    List<Customer> IGenericRepository<Customer>.GetIAll()
-    {
-        throw new NotImplementedException();
-    }
-
-    bool IGenericRepository<Customer>.UpdateItem(Customer item)
+    public bool UpdateItem(Customer item)
     {
         throw new NotImplementedException();
     }

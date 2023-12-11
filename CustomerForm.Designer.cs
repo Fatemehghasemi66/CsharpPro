@@ -88,7 +88,7 @@
             // BirthDateLable
             // 
             BirthDateLable.AutoSize = true;
-            BirthDateLable.Location = new Point(58, 333);
+            BirthDateLable.Location = new Point(1054, 111);
             BirthDateLable.Name = "BirthDateLable";
             BirthDateLable.Size = new Size(114, 32);
             BirthDateLable.TabIndex = 11;
@@ -153,9 +153,9 @@
             // SaveButton
             // 
             SaveButton.BackColor = Color.Aquamarine;
-            SaveButton.Location = new Point(482, 474);
+            SaveButton.Location = new Point(1250, 274);
             SaveButton.Name = "SaveButton";
-            SaveButton.Size = new Size(159, 74);
+            SaveButton.Size = new Size(254, 74);
             SaveButton.TabIndex = 22;
             SaveButton.Text = "Save";
             SaveButton.UseVisualStyleBackColor = false;
@@ -164,7 +164,7 @@
             // RememberCustomerheckBox
             // 
             RememberCustomerheckBox.AutoSize = true;
-            RememberCustomerheckBox.Location = new Point(482, 419);
+            RememberCustomerheckBox.Location = new Point(1284, 216);
             RememberCustomerheckBox.Name = "RememberCustomerheckBox";
             RememberCustomerheckBox.Size = new Size(162, 36);
             RememberCustomerheckBox.TabIndex = 23;
@@ -174,11 +174,11 @@
             // CustomerGridView
             // 
             CustomerGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            CustomerGridView.Location = new Point(23, 599);
+            CustomerGridView.Location = new Point(23, 427);
             CustomerGridView.Name = "CustomerGridView";
             CustomerGridView.RowHeadersWidth = 82;
             CustomerGridView.RowTemplate.Height = 41;
-            CustomerGridView.Size = new Size(1086, 300);
+            CustomerGridView.Size = new Size(1578, 472);
             CustomerGridView.TabIndex = 24;
             // 
             // MessageLable
@@ -218,7 +218,7 @@
             // BirthDatedateTimePicker
             // 
             BirthDatedateTimePicker.AccessibleRole = AccessibleRole.None;
-            BirthDatedateTimePicker.Location = new Point(187, 333);
+            BirthDatedateTimePicker.Location = new Point(1189, 109);
             BirthDatedateTimePicker.Name = "BirthDatedateTimePicker";
             BirthDatedateTimePicker.Size = new Size(386, 39);
             BirthDatedateTimePicker.TabIndex = 31;
@@ -227,7 +227,7 @@
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1137, 965);
+            ClientSize = new Size(1634, 965);
             Controls.Add(BirthDatedateTimePicker);
             Controls.Add(HomeAddrressTextBox);
             Controls.Add(HomeAddressLable);

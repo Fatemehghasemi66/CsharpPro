@@ -30,14 +30,5 @@ public class Product:BaseEntity
     {
         throw new NotImplementedException();
     }
-
-    internal void AddItem()
-    {
-        throw new NotImplementedException();
-    }
-
-    public static implicit operator Product(ProductRepository v)
-    {
-        throw new NotImplementedException();
-    }
+    
 }

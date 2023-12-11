@@ -1,4 +1,5 @@
 using CsharpPro.Models;
+using CsharpPro.Repository;
 using System.Data;
 using System.Globalization;
 
@@ -6,7 +7,6 @@ namespace CsharpPro
 {
     public partial class CustomerForm : Form
     {
-        List<User> people = default;
         public CustomerForm()
         {
             InitializeComponent();
@@ -14,6 +14,9 @@ namespace CsharpPro
             DateLable.Text = PC.GetYear(DateTime.Now) + "/" + PC.GetMonth(DateTime.Now) + "/" + PC.GetDayOfMonth(DateTime.Now);
             System.Timers.Timer time = new System.Timers.Timer();
             TimeLable.Text = DateTime.Now.Hour + ":" + DateTime.Now.Minute + ":" + DateTime.Now.Second;
+            //CustomerRepository customerrepository = new CustomerRepository();
+            //CustomerGridView.DataSource = customerrepository.GetIAll();
+
         }
         public void ClearControl()
         {
@@ -42,8 +45,7 @@ namespace CsharpPro
         {
             try
             {
-                Customer customer = new Customer(firstName: FirstNameTextBox.Text, lastName: LastNameTextBox.Text, birthDate: BirthDatedateTimePicker.Value.Date,
-                    mobileNumber: MobileNumberTextBox.Text, emailAddress: EmailAddressTextBox.Text);
+
                 if (string.IsNullOrEmpty(MobileNumberTextBox.Text) || string.IsNullOrEmpty(FirstNameTextBox.Text) || string.IsNullOrEmpty(LastNameTextBox.Text) || (MobileNumberTextBox.Text).Length < 11)
                 {
                     MessageLable.BackColor = Color.DarkRed;
@@ -65,17 +67,12 @@ namespace CsharpPro
                 MessageLable.BackColor = Color.DarkGreen;
                 MessageLable.ForeColor = Color.LightGreen;
                 MessageLable.Text = $"Dear {FirstNameTextBox.Text} Wellcome to Stor";
-                people = new List<User>();
-                User user = new User()
-                {
-                    FirstName = FirstNameTextBox.Text,
-                    LastName = LastNameTextBox.Text,
-                    BirthDate = BirthDatedateTimePicker.Value.Date,
-                    MobileNumber = MobileNumberTextBox.Text,
-                };
-                people.Add(user);
+                Customer customer = new Customer(firstName: FirstNameTextBox.Text, lastName: LastNameTextBox.Text, birthDate: BirthDatedateTimePicker.Value.Date,
+                 mobileNumber: MobileNumberTextBox.Text, emailAddress: EmailAddressTextBox.Text);
+                CustomerRepository customerRepository = new CustomerRepository();
+                customerRepository.AddItem(customer);
                 CustomerGridView.DataSource = null;
-                CustomerGridView.DataSource = people;
+                CustomerGridView.DataSource = customerRepository.GetIAll();
                 CustomerGridView.Refresh();
             }
             catch (Exception ex)
