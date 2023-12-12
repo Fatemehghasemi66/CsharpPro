@@ -1,12 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CsharpPro.Contracts;
 
-namespace CsharpPro.Models
+
+namespace CsharpPro.Models;
+
+public class Address :Customer
+
 {
-    public class Address:Customer
+    public Address()
     {
     }
+
+    public Address(string firstname,string lastname, string mobile, string homeAddress)
+    {
+        FirstName = firstname;
+        LastName = lastname;
+        MobileNumber = mobile;
+        HomeAddress = homeAddress;
+       
+    }
+
+
 }

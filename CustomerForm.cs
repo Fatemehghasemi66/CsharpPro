@@ -43,9 +43,10 @@ namespace CsharpPro
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
+
+
             try
             {
-
                 if (string.IsNullOrEmpty(MobileNumberTextBox.Text) || string.IsNullOrEmpty(FirstNameTextBox.Text) || string.IsNullOrEmpty(LastNameTextBox.Text) || (MobileNumberTextBox.Text).Length < 11)
                 {
                     MessageLable.BackColor = Color.DarkRed;
@@ -68,7 +69,7 @@ namespace CsharpPro
                 MessageLable.ForeColor = Color.LightGreen;
                 MessageLable.Text = $"Dear {FirstNameTextBox.Text} Wellcome to Stor";
                 Customer customer = new Customer(firstName: FirstNameTextBox.Text, lastName: LastNameTextBox.Text, birthDate: BirthDatedateTimePicker.Value.Date,
-                 mobileNumber: MobileNumberTextBox.Text, emailAddress: EmailAddressTextBox.Text);
+                 mobileNumber: MobileNumberTextBox.Text, emailAddress: EmailAddressTextBox.Text, homeAddress: HomeAddrressTextBox.Text);
                 CustomerRepository customerRepository = new CustomerRepository();
                 customerRepository.AddItem(customer);
                 CustomerGridView.DataSource = null;
@@ -86,6 +87,16 @@ namespace CsharpPro
         }
 
         private void EmailAddressTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

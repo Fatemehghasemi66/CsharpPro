@@ -1,6 +1,6 @@
 ﻿namespace CsharpPro
 {
-    partial class Address
+    partial class AddressForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,34 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dataGridView1 = new DataGridView();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            AddressGridView = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)AddressGridView).BeginInit();
             SuspendLayout();
             // 
-            // dataGridView1
+            // AddressGridView
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(144, 91);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 82;
-            dataGridView1.RowTemplate.Height = 41;
-            dataGridView1.Size = new Size(538, 300);
-            dataGridView1.TabIndex = 0;
+            AddressGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            AddressGridView.Location = new Point(3, 0);
+            AddressGridView.Name = "AddressGridView";
+            AddressGridView.RowTemplate.Height = 25;
+            AddressGridView.Size = new Size(800, 438);
+            AddressGridView.TabIndex = 0;
             // 
-            // Address
+            // AddressForm
             // 
-            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(dataGridView1);
-            Name = "Address";
-            Text = "Address";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            Controls.Add(AddressGridView);
+            Name = "AddressForm";
+            Text = "AddressForm";
+            Load += Address_Load;
+            ((System.ComponentModel.ISupportInitialize)AddressGridView).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private DataGridView dataGridView1;
+        private DataGridView AddressGridView;
     }
 }

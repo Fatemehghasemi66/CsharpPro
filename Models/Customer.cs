@@ -13,7 +13,7 @@ public class Customer : User
     { 
     }
 
-    public Customer(string firstName, string lastName, DateTime birthDate, string mobileNumber, string emailAddress)
+    public Customer(string firstName, string lastName, DateTime birthDate, string mobileNumber, string emailAddress,string homeAddress)
 
     {
         FirstName = firstName;
@@ -21,6 +21,7 @@ public class Customer : User
         BirthDate = birthDate;
         MobileNumber = mobileNumber;
         EmailAddress = emailAddress;
+        HomeAddress = homeAddress;
         IsValidMobileNumber = true;
         IsValidEmail = true;
     }
