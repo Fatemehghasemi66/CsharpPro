@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CsharpPro.Repository
 {
-    internal class UserRepository : IGenericRepository<User>
+    public class UserRepository : IGenericRepository<User>
     {
         public bool AddItem(User item)
         {
