@@ -1,0 +1,19 @@
+[
+  {
+    "age": 35,
+    "FirstName": "Fatemeh",
+    "IsAdmin": true,
+    "LastName": "ghasemi"
+  },
+  {
+    "FirstName": "Ali",
+    "LastName": "Aslani",
+    "IsAdmin": false,
+    "age": 30
+  },
+  {
+    "FirstName": "Maryam",
+    "LastName": "Maryami",
+    "IsAdmin": true
+  }
+]

@@ -49,128 +49,128 @@
             HomeAddressLable = new Label();
             BirthDatedateTimePicker = new DateTimePicker();
             GenderLable = new Label();
-            GenderCheckedListBox = new CheckedListBox();
+            comboBox1 = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)CustomerGridView).BeginInit();
             SuspendLayout();
             // 
             // TimeLable
             // 
             TimeLable.AutoSize = true;
-            TimeLable.Location = new Point(11, 32);
-            TimeLable.Margin = new Padding(2, 0, 2, 0);
+            TimeLable.Location = new Point(20, 68);
+            TimeLable.Margin = new Padding(4, 0, 4, 0);
             TimeLable.Name = "TimeLable";
-            TimeLable.Size = new Size(0, 15);
+            TimeLable.Size = new Size(0, 32);
             TimeLable.TabIndex = 15;
             // 
             // DateLable
             // 
             DateLable.AutoSize = true;
-            DateLable.Location = new Point(12, 9);
-            DateLable.Margin = new Padding(2, 0, 2, 0);
+            DateLable.Location = new Point(22, 19);
+            DateLable.Margin = new Padding(4, 0, 4, 0);
             DateLable.Name = "DateLable";
-            DateLable.Size = new Size(0, 15);
+            DateLable.Size = new Size(0, 32);
             DateLable.TabIndex = 14;
             // 
             // CustomerId
             // 
             CustomerId.AutoSize = true;
-            CustomerId.Location = new Point(367, 11);
-            CustomerId.Margin = new Padding(2, 0, 2, 0);
+            CustomerId.Location = new Point(682, 23);
+            CustomerId.Margin = new Padding(4, 0, 4, 0);
             CustomerId.Name = "CustomerId";
-            CustomerId.Size = new Size(69, 15);
+            CustomerId.Size = new Size(137, 32);
             CustomerId.TabIndex = 13;
             CustomerId.Text = "CustomerId";
             // 
             // EmailAddressLable
             // 
             EmailAddressLable.AutoSize = true;
-            EmailAddressLable.Location = new Point(270, 57);
-            EmailAddressLable.Margin = new Padding(2, 0, 2, 0);
+            EmailAddressLable.Location = new Point(501, 122);
+            EmailAddressLable.Margin = new Padding(4, 0, 4, 0);
             EmailAddressLable.Name = "EmailAddressLable";
-            EmailAddressLable.Size = new Size(78, 15);
+            EmailAddressLable.Size = new Size(155, 32);
             EmailAddressLable.TabIndex = 12;
             EmailAddressLable.Text = "EmailAddress";
             // 
             // BirthDateLable
             // 
             BirthDateLable.AutoSize = true;
-            BirthDateLable.Location = new Point(568, 52);
-            BirthDateLable.Margin = new Padding(2, 0, 2, 0);
+            BirthDateLable.Location = new Point(1055, 111);
+            BirthDateLable.Margin = new Padding(4, 0, 4, 0);
             BirthDateLable.Name = "BirthDateLable";
-            BirthDateLable.Size = new Size(56, 15);
+            BirthDateLable.Size = new Size(114, 32);
             BirthDateLable.TabIndex = 11;
             BirthDateLable.Text = "BirthDate";
             // 
             // MobilNumberLable
             // 
             MobilNumberLable.AutoSize = true;
-            MobilNumberLable.Location = new Point(6, 128);
-            MobilNumberLable.Margin = new Padding(2, 0, 2, 0);
+            MobilNumberLable.Location = new Point(11, 273);
+            MobilNumberLable.Margin = new Padding(4, 0, 4, 0);
             MobilNumberLable.Name = "MobilNumberLable";
-            MobilNumberLable.Size = new Size(88, 15);
+            MobilNumberLable.Size = new Size(177, 32);
             MobilNumberLable.TabIndex = 10;
             MobilNumberLable.Text = "MobileNumber";
             // 
             // LastNameLable
             // 
             LastNameLable.AutoSize = true;
-            LastNameLable.Location = new Point(31, 91);
-            LastNameLable.Margin = new Padding(2, 0, 2, 0);
+            LastNameLable.Location = new Point(58, 194);
+            LastNameLable.Margin = new Padding(4, 0, 4, 0);
             LastNameLable.Name = "LastNameLable";
-            LastNameLable.Size = new Size(60, 15);
+            LastNameLable.Size = new Size(119, 32);
             LastNameLable.TabIndex = 9;
             LastNameLable.Text = "LastName";
             // 
             // FirstNameLable
             // 
             FirstNameLable.AutoSize = true;
-            FirstNameLable.Location = new Point(31, 60);
-            FirstNameLable.Margin = new Padding(2, 0, 2, 0);
+            FirstNameLable.Location = new Point(58, 128);
+            FirstNameLable.Margin = new Padding(4, 0, 4, 0);
             FirstNameLable.Name = "FirstNameLable";
-            FirstNameLable.Size = new Size(61, 15);
+            FirstNameLable.Size = new Size(122, 32);
             FirstNameLable.TabIndex = 8;
             FirstNameLable.Text = "FirstName";
             // 
             // FirstNameTextBox
             // 
-            FirstNameTextBox.Location = new Point(105, 57);
-            FirstNameTextBox.Margin = new Padding(2, 1, 2, 1);
+            FirstNameTextBox.Location = new Point(195, 122);
+            FirstNameTextBox.Margin = new Padding(4, 2, 4, 2);
             FirstNameTextBox.Name = "FirstNameTextBox";
-            FirstNameTextBox.Size = new Size(128, 23);
+            FirstNameTextBox.Size = new Size(234, 39);
             FirstNameTextBox.TabIndex = 17;
             // 
             // LastNameTextBox
             // 
-            LastNameTextBox.Location = new Point(105, 91);
-            LastNameTextBox.Margin = new Padding(2, 1, 2, 1);
+            LastNameTextBox.Location = new Point(195, 194);
+            LastNameTextBox.Margin = new Padding(4, 2, 4, 2);
             LastNameTextBox.Name = "LastNameTextBox";
-            LastNameTextBox.Size = new Size(128, 23);
+            LastNameTextBox.Size = new Size(234, 39);
             LastNameTextBox.TabIndex = 18;
             // 
             // MobileNumberTextBox
             // 
-            MobileNumberTextBox.Location = new Point(105, 127);
-            MobileNumberTextBox.Margin = new Padding(2, 1, 2, 1);
+            MobileNumberTextBox.Location = new Point(195, 271);
+            MobileNumberTextBox.Margin = new Padding(4, 2, 4, 2);
             MobileNumberTextBox.Name = "MobileNumberTextBox";
-            MobileNumberTextBox.Size = new Size(128, 23);
+            MobileNumberTextBox.Size = new Size(234, 39);
             MobileNumberTextBox.TabIndex = 19;
             // 
             // EmailAddressTextBox
             // 
-            EmailAddressTextBox.Location = new Point(367, 52);
-            EmailAddressTextBox.Margin = new Padding(2, 1, 2, 1);
+            EmailAddressTextBox.Location = new Point(682, 111);
+            EmailAddressTextBox.Margin = new Padding(4, 2, 4, 2);
             EmailAddressTextBox.Name = "EmailAddressTextBox";
-            EmailAddressTextBox.Size = new Size(174, 23);
+            EmailAddressTextBox.Size = new Size(320, 39);
             EmailAddressTextBox.TabIndex = 21;
             EmailAddressTextBox.TextChanged += EmailAddressTextBox_TextChanged;
             // 
             // SaveButton
             // 
             SaveButton.BackColor = Color.Aquamarine;
-            SaveButton.Location = new Point(673, 127);
-            SaveButton.Margin = new Padding(2, 1, 2, 1);
+            SaveButton.Location = new Point(1250, 271);
+            SaveButton.Margin = new Padding(4, 2, 4, 2);
             SaveButton.Name = "SaveButton";
-            SaveButton.Size = new Size(137, 35);
+            SaveButton.Size = new Size(254, 75);
             SaveButton.TabIndex = 22;
             SaveButton.Text = "Save";
             SaveButton.UseVisualStyleBackColor = false;
@@ -179,10 +179,10 @@
             // RememberCustomerheckBox
             // 
             RememberCustomerheckBox.AutoSize = true;
-            RememberCustomerheckBox.Location = new Point(691, 101);
-            RememberCustomerheckBox.Margin = new Padding(2, 1, 2, 1);
+            RememberCustomerheckBox.Location = new Point(1283, 215);
+            RememberCustomerheckBox.Margin = new Padding(4, 2, 4, 2);
             RememberCustomerheckBox.Name = "RememberCustomerheckBox";
-            RememberCustomerheckBox.Size = new Size(84, 19);
+            RememberCustomerheckBox.Size = new Size(162, 36);
             RememberCustomerheckBox.TabIndex = 23;
             RememberCustomerheckBox.Text = "Remember";
             RememberCustomerheckBox.UseVisualStyleBackColor = true;
@@ -190,88 +190,87 @@
             // CustomerGridView
             // 
             CustomerGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            CustomerGridView.Location = new Point(19, 226);
-            CustomerGridView.Margin = new Padding(2, 1, 2, 1);
+            CustomerGridView.Location = new Point(35, 482);
+            CustomerGridView.Margin = new Padding(4, 2, 4, 2);
             CustomerGridView.Name = "CustomerGridView";
             CustomerGridView.RowHeadersWidth = 82;
             CustomerGridView.RowTemplate.Height = 41;
-            CustomerGridView.Size = new Size(850, 253);
+            CustomerGridView.Size = new Size(1579, 540);
             CustomerGridView.TabIndex = 24;
             // 
             // MessageLable
             // 
             MessageLable.AutoSize = true;
-            MessageLable.Location = new Point(179, 29);
-            MessageLable.Margin = new Padding(2, 0, 2, 0);
+            MessageLable.Location = new Point(332, 62);
+            MessageLable.Margin = new Padding(4, 0, 4, 0);
             MessageLable.Name = "MessageLable";
-            MessageLable.Size = new Size(0, 15);
+            MessageLable.Size = new Size(0, 32);
             MessageLable.TabIndex = 25;
             // 
             // CustomerIdLable
             // 
             CustomerIdLable.AutoSize = true;
             CustomerIdLable.BackColor = Color.FromArgb(192, 255, 255);
-            CustomerIdLable.Location = new Point(456, 11);
-            CustomerIdLable.Margin = new Padding(2, 0, 2, 0);
+            CustomerIdLable.Location = new Point(847, 23);
+            CustomerIdLable.Margin = new Padding(4, 0, 4, 0);
             CustomerIdLable.Name = "CustomerIdLable";
-            CustomerIdLable.Size = new Size(0, 15);
+            CustomerIdLable.Size = new Size(0, 32);
             CustomerIdLable.TabIndex = 26;
             // 
             // HomeAddrressTextBox
             // 
-            HomeAddrressTextBox.Location = new Point(367, 91);
-            HomeAddrressTextBox.Margin = new Padding(2, 1, 2, 1);
+            HomeAddrressTextBox.Location = new Point(682, 194);
+            HomeAddrressTextBox.Margin = new Padding(4, 2, 4, 2);
             HomeAddrressTextBox.Multiline = true;
             HomeAddrressTextBox.Name = "HomeAddrressTextBox";
-            HomeAddrressTextBox.Size = new Size(174, 93);
+            HomeAddrressTextBox.Size = new Size(320, 194);
             HomeAddrressTextBox.TabIndex = 28;
             // 
             // HomeAddressLable
             // 
             HomeAddressLable.AutoSize = true;
-            HomeAddressLable.Location = new Point(266, 91);
-            HomeAddressLable.Margin = new Padding(2, 0, 2, 0);
+            HomeAddressLable.Location = new Point(494, 194);
+            HomeAddressLable.Margin = new Padding(4, 0, 4, 0);
             HomeAddressLable.Name = "HomeAddressLable";
-            HomeAddressLable.Size = new Size(82, 15);
+            HomeAddressLable.Size = new Size(163, 32);
             HomeAddressLable.TabIndex = 27;
             HomeAddressLable.Text = "HomeAddress";
             // 
             // BirthDatedateTimePicker
             // 
             BirthDatedateTimePicker.AccessibleRole = AccessibleRole.None;
-            BirthDatedateTimePicker.Location = new Point(640, 51);
-            BirthDatedateTimePicker.Margin = new Padding(2, 1, 2, 1);
+            BirthDatedateTimePicker.Location = new Point(1189, 109);
+            BirthDatedateTimePicker.Margin = new Padding(4, 2, 4, 2);
             BirthDatedateTimePicker.Name = "BirthDatedateTimePicker";
-            BirthDatedateTimePicker.Size = new Size(210, 23);
+            BirthDatedateTimePicker.Size = new Size(387, 39);
             BirthDatedateTimePicker.TabIndex = 31;
             // 
             // GenderLable
             // 
             GenderLable.AutoSize = true;
-            GenderLable.Location = new Point(47, 169);
-            GenderLable.Margin = new Padding(2, 0, 2, 0);
+            GenderLable.Location = new Point(87, 361);
+            GenderLable.Margin = new Padding(4, 0, 4, 0);
             GenderLable.Name = "GenderLable";
-            GenderLable.Size = new Size(45, 15);
+            GenderLable.Size = new Size(92, 32);
             GenderLable.TabIndex = 32;
             GenderLable.Text = "Gender";
             GenderLable.Click += label1_Click;
             // 
-            // GenderCheckedListBox
+            // comboBox1
             // 
-            GenderCheckedListBox.FormattingEnabled = true;
-            GenderCheckedListBox.Items.AddRange(new object[] { "Male", "Female", "Other" });
-            GenderCheckedListBox.Location = new Point(105, 154);
-            GenderCheckedListBox.Name = "GenderCheckedListBox";
-            GenderCheckedListBox.Size = new Size(120, 58);
-            GenderCheckedListBox.TabIndex = 33;
-            GenderCheckedListBox.SelectedIndexChanged += checkedListBox1_SelectedIndexChanged;
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(187, 353);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(242, 40);
+            comboBox1.TabIndex = 33;
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // CustomerForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(880, 506);
-            Controls.Add(GenderCheckedListBox);
+            ClientSize = new Size(1634, 1079);
+            Controls.Add(comboBox1);
             Controls.Add(GenderLable);
             Controls.Add(BirthDatedateTimePicker);
             Controls.Add(HomeAddrressTextBox);
@@ -293,7 +292,7 @@
             Controls.Add(MobilNumberLable);
             Controls.Add(LastNameLable);
             Controls.Add(FirstNameLable);
-            Margin = new Padding(2, 1, 2, 1);
+            Margin = new Padding(4, 2, 4, 2);
             Name = "CustomerForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "CustomerForm";
@@ -326,6 +325,6 @@
         private Label HomeAddressLable;
         private DateTimePicker BirthDatedateTimePicker;
         private Label GenderLable;
-        private CheckedListBox GenderCheckedListBox;
+        private ComboBox comboBox1;
     }
 }

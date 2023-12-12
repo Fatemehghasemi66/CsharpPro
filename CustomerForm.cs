@@ -1,3 +1,4 @@
+using CsharpPro.Enums;
 using CsharpPro.Models;
 using CsharpPro.Repository;
 using System.Data;
@@ -14,6 +15,7 @@ namespace CsharpPro
             DateLable.Text = PC.GetYear(DateTime.Now) + "/" + PC.GetMonth(DateTime.Now) + "/" + PC.GetDayOfMonth(DateTime.Now);
             System.Timers.Timer time = new System.Timers.Timer();
             TimeLable.Text = DateTime.Now.Hour + ":" + DateTime.Now.Minute + ":" + DateTime.Now.Second;
+            comboBox1.DataSource = Enum.GetValues(typeof(Gender));
             //CustomerRepository customerrepository = new CustomerRepository();
             //CustomerGridView.DataSource = customerrepository.GetIAll();
 
@@ -97,6 +99,11 @@ namespace CsharpPro
         }
 
         private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
