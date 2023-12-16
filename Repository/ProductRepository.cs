@@ -1,5 +1,6 @@
 ﻿using CsharpPro.Contracts;
 using CsharpPro.Models;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
@@ -11,9 +12,11 @@ namespace CsharpPro.Repository;
 
 public class ProductRepository : IGenericRepository<Product>
 {
+    public readonly string jsonPData = File.ReadAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory,"FileData", "Pro.json")); 
     public static List<Product> products = new List<Product>();
     public ProductRepository()
     {
+        products = JsonConvert.DeserializeObject<List<Product>>(jsonPData);
         
     }
     public bool AddItem(Product item)

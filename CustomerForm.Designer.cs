@@ -30,7 +30,6 @@
         {
             TimeLable = new Label();
             DateLable = new Label();
-            CustomerId = new Label();
             EmailAddressLable = new Label();
             BirthDateLable = new Label();
             MobilNumberLable = new Label();
@@ -44,12 +43,11 @@
             RememberCustomerheckBox = new CheckBox();
             CustomerGridView = new DataGridView();
             MessageLable = new Label();
-            CustomerIdLable = new Label();
             HomeAddrressTextBox = new TextBox();
             HomeAddressLable = new Label();
             BirthDatedateTimePicker = new DateTimePicker();
             GenderLable = new Label();
-            comboBox1 = new ComboBox();
+            GenderComboBox = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)CustomerGridView).BeginInit();
             SuspendLayout();
             // 
@@ -70,16 +68,6 @@
             DateLable.Name = "DateLable";
             DateLable.Size = new Size(0, 32);
             DateLable.TabIndex = 14;
-            // 
-            // CustomerId
-            // 
-            CustomerId.AutoSize = true;
-            CustomerId.Location = new Point(682, 23);
-            CustomerId.Margin = new Padding(4, 0, 4, 0);
-            CustomerId.Name = "CustomerId";
-            CustomerId.Size = new Size(137, 32);
-            CustomerId.TabIndex = 13;
-            CustomerId.Text = "CustomerId";
             // 
             // EmailAddressLable
             // 
@@ -207,16 +195,6 @@
             MessageLable.Size = new Size(0, 32);
             MessageLable.TabIndex = 25;
             // 
-            // CustomerIdLable
-            // 
-            CustomerIdLable.AutoSize = true;
-            CustomerIdLable.BackColor = Color.FromArgb(192, 255, 255);
-            CustomerIdLable.Location = new Point(847, 23);
-            CustomerIdLable.Margin = new Padding(4, 0, 4, 0);
-            CustomerIdLable.Name = "CustomerIdLable";
-            CustomerIdLable.Size = new Size(0, 32);
-            CustomerIdLable.TabIndex = 26;
-            // 
             // HomeAddrressTextBox
             // 
             HomeAddrressTextBox.Location = new Point(682, 194);
@@ -256,26 +234,25 @@
             GenderLable.Text = "Gender";
             GenderLable.Click += label1_Click;
             // 
-            // comboBox1
+            // GenderComboBox
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(187, 353);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(242, 40);
-            comboBox1.TabIndex = 33;
-            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+            GenderComboBox.FormattingEnabled = true;
+            GenderComboBox.Location = new Point(187, 353);
+            GenderComboBox.Name = "GenderComboBox";
+            GenderComboBox.Size = new Size(242, 40);
+            GenderComboBox.TabIndex = 33;
+            GenderComboBox.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // CustomerForm
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1634, 1079);
-            Controls.Add(comboBox1);
+            Controls.Add(GenderComboBox);
             Controls.Add(GenderLable);
             Controls.Add(BirthDatedateTimePicker);
             Controls.Add(HomeAddrressTextBox);
             Controls.Add(HomeAddressLable);
-            Controls.Add(CustomerIdLable);
             Controls.Add(MessageLable);
             Controls.Add(CustomerGridView);
             Controls.Add(RememberCustomerheckBox);
@@ -286,7 +263,6 @@
             Controls.Add(FirstNameTextBox);
             Controls.Add(TimeLable);
             Controls.Add(DateLable);
-            Controls.Add(CustomerId);
             Controls.Add(EmailAddressLable);
             Controls.Add(BirthDateLable);
             Controls.Add(MobilNumberLable);
@@ -306,7 +282,6 @@
 
         private Label TimeLable;
         private Label DateLable;
-        private Label CustomerId;
         private Label EmailAddressLable;
         private Label BirthDateLable;
         private Label MobilNumberLable;
@@ -320,11 +295,10 @@
         private CheckBox RememberCustomerheckBox;
         private DataGridView CustomerGridView;
         private Label MessageLable;
-        private Label CustomerIdLable;
         private TextBox HomeAddrressTextBox;
         private Label HomeAddressLable;
         private DateTimePicker BirthDatedateTimePicker;
         private Label GenderLable;
-        private ComboBox comboBox1;
+        private ComboBox GenderComboBox;
     }
 }

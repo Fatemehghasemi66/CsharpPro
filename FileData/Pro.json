@@ -1,0 +1,49 @@
+[
+  {
+    "Id": 250,
+    "Name": "Milk",
+    "Price": 2500,
+    "Count": 90,
+    "BrandName": "Kaleh",
+    "IsActive": true,
+    "creationDate": "1402/09-/05"
+
+  },
+  {
+    "Id": 251,
+    "Name": "Butter",
+    "Price": 1500,
+    "Count": 30,
+    "BrandName": "pak",
+    "IsActive": true,
+    "creationDate": "1402/04-/05"
+  },
+  {
+    "Id": 253,
+    "Name": "Cheese",
+    "Price": 3200,
+    "Count": 40,
+    "BrandName": "Ramak",
+    "IsActive": true,
+    "creationDate": "1402/04-/05"
+  },
+  {
+    "Id": 254,
+    "Name": "Yogurt",
+    "Price": 5000,
+    "Count": 50,
+    "BrandName": "Mahsham",
+    "IsActive": true,
+    "creationDate": "1402/02-/05"
+  },
+  {
+    "Id": 256,
+    "Name": "Ice cream",
+    "Price": 1000,
+    "Count": 80,
+    "BrandName": "Kaleh",
+    "IsActive": true,
+    "creationDate": "1402/02-/05"
+  }
+]
+

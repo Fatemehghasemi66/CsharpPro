@@ -30,6 +30,7 @@ public abstract class BaseEntity
         Id = random.Next(minValue: minvalue, maxValue: maxvalue);
     }
 
+
     public int Id { get; set; }
     public bool IsActive { get; set; }
     public DateTime CreationDate { get; set; }

@@ -15,9 +15,9 @@ namespace CsharpPro
             DateLable.Text = PC.GetYear(DateTime.Now) + "/" + PC.GetMonth(DateTime.Now) + "/" + PC.GetDayOfMonth(DateTime.Now);
             System.Timers.Timer time = new System.Timers.Timer();
             TimeLable.Text = DateTime.Now.Hour + ":" + DateTime.Now.Minute + ":" + DateTime.Now.Second;
-            comboBox1.DataSource = Enum.GetValues(typeof(Gender));
-            //CustomerRepository customerrepository = new CustomerRepository();
-            //CustomerGridView.DataSource = customerrepository.GetIAll();
+            GenderComboBox.DataSource = Enum.GetValues(typeof(Gender));
+            CustomerRepository customerrepository = new CustomerRepository();
+            CustomerGridView.DataSource = customerrepository.GetIAll();
 
         }
         public void ClearControl()
@@ -71,7 +71,8 @@ namespace CsharpPro
                 MessageLable.ForeColor = Color.LightGreen;
                 MessageLable.Text = $"Dear {FirstNameTextBox.Text} Wellcome to Stor";
                 Customer customer = new Customer(firstName: FirstNameTextBox.Text, lastName: LastNameTextBox.Text, birthDate: BirthDatedateTimePicker.Value.Date,
-                 mobileNumber: MobileNumberTextBox.Text, emailAddress: EmailAddressTextBox.Text, homeAddress: HomeAddrressTextBox.Text);
+                mobileNumber: MobileNumberTextBox.Text, emailAddress: EmailAddressTextBox.Text, homeAddress: HomeAddrressTextBox.Text,
+                gender: (Gender)GenderComboBox.SelectedValue);
                 CustomerRepository customerRepository = new CustomerRepository();
                 customerRepository.AddItem(customer);
                 CustomerGridView.DataSource = null;

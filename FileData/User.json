@@ -1,0 +1,25 @@
+[
+  {
+    "FirstName": "Fatemeh",
+    "LastName": "ghasemi",
+    "BirthDate": null,
+    "MobileNumber": 9125225580,
+    "Gender":2
+
+
+  },
+  {
+    "FirstName": "Ali",
+    "LastName": "Aslani",
+    "BirthDate": null,
+    "MobileNumber": 935993555,
+    "Gender": 1
+  },
+  {
+    "FirstName": "Maryam",
+    "LastName": "Maryami",
+    "BirthDate": null,
+    "MobileNumber": 9115522558,
+    "Gender": 2
+  }
+]

@@ -11,16 +11,13 @@ namespace CsharpPro.Repository;
 
 public class CustomerRepository : IGenericRepository<Customer>
 {
-    public readonly string jsonDataStr = File.ReadAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "FileDate", "json1.json"));
-
+    public readonly string jsonData = File.ReadAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "FileData", "Customer.json"));
     public static List<Customer> people = new List<Customer>();
-
     public CustomerRepository()
-        {
-        people = JsonConvert.DeserializeObject <List<Customer>>(jsonDataStr);
-        
-        }
-
+    {
+        people = JsonConvert.DeserializeObject<List<Customer>>(jsonData);
+    } 
+   
     public bool AddItem(Customer item)
     {
         people.Add(item);

@@ -1,20 +1,26 @@
 ﻿using CsharpPro.Contracts;
 using CsharpPro.Enums;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CsharpPro.Models;
 
 public class User : BaseEntity
 {
-    public Gender Gender { get; set; }
+    public User(string firstName, string lastName, DateTime? birthDate, string mobileNumber, Gender gender)
+
+    {
+        FirstName = firstName;
+        LastName = lastName;
+        BirthDate = birthDate;
+        MobileNumber = mobileNumber;
+        Gender = gender;
+    }
+
     public string FirstName { get; set; }
     public string LastName { get; set; }
-    public DateTime BirthDate { get; set; }
     public string MobileNumber { get; set; }
+    public DateTime? BirthDate { get; set; }
+    public Gender Gender { get; set; }
+
     public string FullName
     {
         get
@@ -24,14 +30,22 @@ public class User : BaseEntity
         }
     }
 
-
     public override bool IsActiveItem()
     {
-        if (BirthDate > DateTime.Now)
-            return true;
-        else
+        if (BirthDate is not null)
+        {
+            if (BirthDate < DateTime.Now)
+                return true;
+            else
 
+                return false;
+        }
+        else
+        {
             return false;
+        }
+    
     }
+
 }
 
