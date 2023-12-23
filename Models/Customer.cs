@@ -31,7 +31,7 @@ public class Customer:BaseEntity
     }
     public string PersianBirthDate
     {
-       get 
+        get
         {
             if (BirthDate is not null)
             {
@@ -44,7 +44,7 @@ public class Customer:BaseEntity
             }
         }
     }
-    
+
     public string FirstName { get; set; }
     public string LastName { get; set; }
     public string MobileNumber { get; set; }

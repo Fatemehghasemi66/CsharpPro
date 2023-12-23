@@ -13,10 +13,10 @@ using System.Windows.Forms;
 
 namespace CsharpPro;
 
-public partial class productForm : Form
+public partial class UserForm : Form
 {
 
-    public productForm()
+    public UserForm()
     {
         InitializeComponent();
         UserRepository userRepository = new UserRepository();
@@ -48,10 +48,10 @@ public partial class productForm : Form
             User user = new User(firstName: FirstNameTextBox.Text, lastName: LastNameTextBox.Text, birthDate: BirthDatedateTimePicker.Value.Date, mobileNumber: MobileNumberTextBox.Text, gender: (Gender)GenderComboBox.SelectedValue);
             UserRepository userRepository = new UserRepository();
             userRepository.AddItem(user);
-            UserDataGridView.DataSource = null; 
+            UserDataGridView.DataSource = null;
             UserDataGridView.DataSource = userRepository.GetIAll();
             UserDataGridView.Refresh();
-           
+
 
         }
         catch
@@ -61,6 +61,11 @@ public partial class productForm : Form
         {
 
         }
+
+    }
+
+    private void UserForm_Load(object sender, EventArgs e)
+    {
 
     }
 }

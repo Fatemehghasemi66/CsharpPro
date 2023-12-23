@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,6 +30,15 @@ public abstract class BaseEntity
         Random random = new Random();
         Id = random.Next(minValue: minvalue, maxValue: maxvalue);
     }
+    public string creationhDate
+    {
+        get
+        {
+            string persianCreationD = CreationDate.ToString("yyy/MM/dd", new CultureInfo("fa-IR"));
+            return persianCreationD;
+        }
+    }
+
 
 
     public int Id { get; set; }

@@ -1,6 +1,6 @@
 ﻿namespace CsharpPro
 {
-    partial class productForm
+    partial class UserForm
     {
         /// <summary>
         /// Required designer variable.
@@ -173,13 +173,14 @@
             Controls.Add(FirstNameLable);
             Controls.Add(UserDataGridView);
             Name = "UserForm";
-            Text = "Form1";
+            Text = "UserForm";
+            Load += UserForm_Load;
             ((System.ComponentModel.ISupportInitialize)UserDataGridView).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
-       
+
 
         #endregion
 

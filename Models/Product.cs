@@ -2,6 +2,7 @@
 using CsharpPro.Repository;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,6 +22,7 @@ public class Product:BaseEntity
         Count = count;
         BrandName = brandName;
     }
+   
     public string Name { get; set; }
     public decimal Price { get; set; }
     public int Count { get; set; }
