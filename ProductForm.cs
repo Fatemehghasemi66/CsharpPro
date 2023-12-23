@@ -1,21 +1,15 @@
 ﻿using CsharpPro.Models;
 using CsharpPro.Repository;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace CsharpPro;
 
 public partial class ProductForm : Form
 {
-
+    public delegate void RefreshDataDeligate();
+    public event RefreshDataDeligate RefreshDataEvent;
 
     public ProductForm()
     {
@@ -24,9 +18,25 @@ public partial class ProductForm : Form
         DateLable.Text = PC.GetYear(DateTime.Now) + "/" + PC.GetMonth(DateTime.Now) + "/" + PC.GetDayOfMonth(DateTime.Now);
         System.Timers.Timer time = new System.Timers.Timer();
         TimeLable.Text = DateTime.Now.Hour + ":" + DateTime.Now.Minute + ":" + DateTime.Now.Second;
+
+        RefreshDataEvent += RefreshData;
+
         ProductRepository Productrepository = new ProductRepository();
         ProductGridView.DataSource = Productrepository.GetIAll();
     }
+    private void LoadFormData()
+    {
+        ProductRepository productRepository = new ProductRepository();
+        ProductGridView.DataSource = productRepository.GetIAll();
+        ProductGridView.DataSource = null;
+        ProductGridView.DataSource = productRepository;
+        ProductGridView.Refresh();
+    }
+    private void RefreshData()
+    {
+        LoadFormData();
+    }
+
     public void ClearControl()
     {
         foreach (Control ctrl in Controls)
@@ -59,9 +69,7 @@ public partial class ProductForm : Form
             Product product = new Product(name: ProNameTextBox.Text, price: decimal.Parse(PriceTextBox.Text), count: int.Parse(CountTextBox.Text), brandName: BrandNameTextBox.Text);
             ProductRepository productRepository = new ProductRepository();
             productRepository.AddItem(product);
-            ProductGridView.DataSource = null;
-            ProductGridView.DataSource = productRepository.GetIAll(); ;
-            ProductGridView.Refresh();
+            RefreshDataEvent();
         }
         catch (Exception ex)
         {
