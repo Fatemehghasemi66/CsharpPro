@@ -3,21 +3,20 @@
 
 namespace CsharpPro.Models;
 
-public class Address :Customer
+public class Address :BaseEntity
 
 {
     public Address()
     {
     }
+    public Customer Customer { get; set; }
+    public string PostalCode {  get; set; }
+    public string City { get; set; }
+    public string Street { get; set; }
+    public string Pelak { get; set; }
 
-    public Address(string firstname,string lastname, string mobile, string homeAddress)
+    public  override bool IsActiveItem()
     {
-        FirstName = firstname;
-        LastName = lastname;
-        MobileNumber = mobile;
-        HomeAddress = homeAddress;
-       
+        throw new NotImplementedException();
     }
-
-
 }

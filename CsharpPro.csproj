@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="NPoco" Version="5.7.1" />
   </ItemGroup>
 
   <ItemGroup>

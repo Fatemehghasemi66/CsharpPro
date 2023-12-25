@@ -1,8 +1,10 @@
 ﻿using CsharpPro.Contracts;
 using CsharpPro.Models;
 using Newtonsoft.Json;
+using NPoco.Expressions;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Text;
@@ -12,13 +14,18 @@ namespace CsharpPro.Repository;
 
 public class ProductRepository : IGenericRepository<Product>
 {
-    public readonly string jsonPData = File.ReadAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory,"FileData", "Pro.json")); 
-    public static List<Product> products = new List<Product>();
-    public ProductRepository()
+    const string connectionString = "Data Source=Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\ASUS\\Documents\\Db-1.mdf;Integrated Security=True;Connect Timeout=30";
+    public static List<Product> products = new List<Product>()
     {
-        products = JsonConvert.DeserializeObject<List<Product>>(jsonPData);
+
+    };
+    //public readonly string jsonPData = File.ReadAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory,"FileData", "Pro.json")); 
+    //public static List<Product> products = new List<Product>();
+    //public ProductRepository()
+    //{
+    //    //products = JsonConvert.DeserializeObject<List<Product>>(jsonPData);
         
-    }
+    //}
     public bool AddItem(Product item)
     
     {
@@ -38,7 +45,22 @@ public class ProductRepository : IGenericRepository<Product>
 
     public List<Product> GetIAll()
     {
-       return products;
+        List<Product> products = new List<Product>();
+        string tableName = "dbo.Product";
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            try
+            {
+                connection.Open();
+                string query = connection.Query;
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return
+        }
     }
 
     bool IGenericRepository<Product>.AddItem(Product item)
