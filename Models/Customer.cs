@@ -14,15 +14,6 @@ public class Customer:User
 {
     public Customer(string firstName, string lastName, DateTime? birthDate, string mobileNumber, Gender gender,string homeAddress,string emailAddress) : base(firstName, lastName, birthDate, mobileNumber, gender)
     {
-        FirstName = firstName;
-        LastName = lastName;
-        MobileNumber = mobileNumber;
-        EmailAddress = emailAddress;
-        HomeAddress = homeAddress;
-        Gender = gender;
-        IsValidMobileNumber = true;
-        IsValidEmail = true;
-        BirthDate = birthDate;
     }
 
     public string PersianBirthDate
