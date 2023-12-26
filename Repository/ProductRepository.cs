@@ -52,14 +52,35 @@ public class ProductRepository : IGenericRepository<Product>
             try
             {
                 connection.Open();
-                string query = connection.Query;
+                string query = $"SELECT * FROM {tableName}";
+                SqlCommand command = new SqlCommand(query, connection);
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    Product product = new Product
+                    {
+                        Id = (int)reader["Id"],
+                        Name = (string)reader["Name"],
+                        BrandName = reader["BrandName"].ToString(),
+                        Count = (int)reader["Count"],
+                        IsActive = (bool)reader["IsActive"],
+                        Price = (decimal)reader["Price"],
+                        CreationDate = (DateTime)reader["CreatinDate"],
+                    };
+                    products.Add(product);  
+                }
 
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show($"Error : {ex.Message}");
             }
-            return
+            finally
+            {
+                connection.Close(); 
+            }
+            return products;
+        
         }
     }
 

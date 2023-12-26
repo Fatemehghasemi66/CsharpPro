@@ -69,7 +69,7 @@ public partial class ProductForm : Form
             Product product = new Product(name: ProNameTextBox.Text, price: decimal.Parse(PriceTextBox.Text), count: int.Parse(CountTextBox.Text), brandName: BrandNameTextBox.Text);
             ProductRepository productRepository = new ProductRepository();
             productRepository.AddItem(product);
-            RefreshDataEvent();
+            RefreshDataEvent?.Invoke();
         }
         catch (Exception ex)
         {

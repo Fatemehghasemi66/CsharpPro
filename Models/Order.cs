@@ -12,8 +12,7 @@ namespace CsharpPro.Models
         public string code { get; set; }
         public DateTime Orderdate { get; set; }
         public int AddresId { get; set; }
-        
-        public Address Address { get; set; }
+        public int CustomerId { get; set; }
         public List<OrderItem> OrderItems { get; set; } 
         public override bool IsActiveItem()
         {

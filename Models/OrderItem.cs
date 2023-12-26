@@ -9,8 +9,9 @@ namespace CsharpPro.Models;
 
 public class OrderItem:BaseEntity
 {
+    public int OrderId { get; set; }
     public decimal CurrentPrice { get; set; }
-    public Product Product { get; set; }
+    public int ProductId { get; set; }
     public override bool IsActiveItem()
     {
         throw new NotImplementedException();

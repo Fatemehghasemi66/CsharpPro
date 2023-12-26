@@ -72,7 +72,7 @@ namespace CsharpPro
                 MessageLable.Text = $"Dear {FirstNameTextBox.Text} Wellcome to Stor";
                 Customer customer = new Customer(firstName: FirstNameTextBox.Text, lastName: LastNameTextBox.Text, birthDate: BirthDatedateTimePicker.Value.Date,
                 mobileNumber: MobileNumberTextBox.Text, emailAddress: EmailAddressTextBox.Text, homeAddress: HomeAddrressTextBox.Text,
-                gender: (Gender)GenderComboBox.SelectedValue);
+                gender: (Gender)GenderComboBox.SelectedItem);
                 CustomerRepository customerRepository = new CustomerRepository();
                 customerRepository.AddItem(customer);
                 CustomerGridView.DataSource = null;

@@ -9,7 +9,7 @@ public class Address :BaseEntity
     public Address()
     {
     }
-    public Customer Customer { get; set; }
+    public int CustomerId { get; set; }
     public string PostalCode {  get; set; }
     public string City { get; set; }
     public string Street { get; set; }

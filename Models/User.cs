@@ -1,5 +1,6 @@
 ﻿using CsharpPro.Contracts;
 using CsharpPro.Enums;
+using System.DirectoryServices;
 
 namespace CsharpPro.Models;
 
@@ -14,7 +15,8 @@ public class User : BaseEntity
         MobileNumber = mobileNumber;
         Gender = gender;
     }
-
+    public string UserName { get; set; }
+    public string Password { get; set; }
     public string FirstName { get; set; }
     public string LastName { get; set; }
     public string MobileNumber { get; set; }

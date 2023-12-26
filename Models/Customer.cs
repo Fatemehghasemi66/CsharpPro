@@ -4,19 +4,15 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace CsharpPro.Models;
 
-public class Customer:BaseEntity
+public class Customer:User
 {
-    public Customer() 
-    { 
-    }
-
-    public Customer(string firstName, string lastName, string mobileNumber, string emailAddress,string homeAddress,Gender gender, DateTime birthDate)
-
+    public Customer(string firstName, string lastName, DateTime? birthDate, string mobileNumber, Gender gender,string homeAddress,string emailAddress) : base(firstName, lastName, birthDate, mobileNumber, gender)
     {
         FirstName = firstName;
         LastName = lastName;
@@ -27,8 +23,8 @@ public class Customer:BaseEntity
         IsValidMobileNumber = true;
         IsValidEmail = true;
         BirthDate = birthDate;
-
     }
+
     public string PersianBirthDate
     {
         get
@@ -45,16 +41,10 @@ public class Customer:BaseEntity
         }
     }
 
-    public string FirstName { get; set; }
-    public string LastName { get; set; }
-    public string MobileNumber { get; set; }
-    public DateTime? BirthDate { get; set; }
-    public Gender Gender { get; set; }
     public string EmailAddress { get; set; }
     public string HomeAddress { get; set; }
     public bool IsValidMobileNumber { get; set; }
     public bool IsValidEmail { get; set; }
-
     public override bool IsActiveItem()
     {
         throw new NotImplementedException();
