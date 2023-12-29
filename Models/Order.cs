@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CsharpPro.Models
 {
-    internal class Order : BaseEntity
+    internal class Order : BaseEntity<int>
     {
         public string code { get; set; }
         public DateTime Orderdate { get; set; }

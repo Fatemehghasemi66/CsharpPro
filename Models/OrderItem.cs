@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CsharpPro.Models;
 
-public class OrderItem:BaseEntity
+public class OrderItem:BaseEntity<int>
 {
     public int OrderId { get; set; }
     public decimal CurrentPrice { get; set; }

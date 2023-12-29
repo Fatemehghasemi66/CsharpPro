@@ -4,10 +4,9 @@ using System.DirectoryServices;
 
 namespace CsharpPro.Models;
 
-public class User : BaseEntity
+public class User : BaseEntity<int>
 {
-    public User(string firstName, string lastName, DateTime? birthDate, string mobileNumber, Gender gender)
-
+    public User(string firstName, string lastName, DateTime birthDate, string mobileNumber, Gender gender)
     {
         FirstName = firstName;
         LastName = lastName;
@@ -15,6 +14,8 @@ public class User : BaseEntity
         MobileNumber = mobileNumber;
         Gender = gender;
     }
+
+
     public string UserName { get; set; }
     public string Password { get; set; }
     public string FirstName { get; set; }

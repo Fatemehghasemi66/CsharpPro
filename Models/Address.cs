@@ -3,7 +3,7 @@
 
 namespace CsharpPro.Models;
 
-public class Address :BaseEntity
+public class Address :BaseEntity<int>
 
 {
     public Address()

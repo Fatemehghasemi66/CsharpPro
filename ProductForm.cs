@@ -66,7 +66,12 @@ public partial class ProductForm : Form
                 return;
             }
             MessageBox.Show($"Product {ProNameTextBox.Text} was successfully inserted");
-            Product product = new Product(name: ProNameTextBox.Text, price: decimal.Parse(PriceTextBox.Text), count: int.Parse(CountTextBox.Text), brandName: BrandNameTextBox.Text);
+            Product product = new Product(
+                name: ProNameTextBox.Text,
+                price: decimal.Parse(PriceTextBox.Text), 
+                count: int.Parse(CountTextBox.Text), 
+                brandName: BrandNameTextBox.Text
+                );
             ProductRepository productRepository = new ProductRepository();
             productRepository.AddItem(product);
             RefreshDataEvent?.Invoke();

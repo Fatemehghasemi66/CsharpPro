@@ -1,21 +1,15 @@
 ﻿using CsharpPro.Contracts;
-using CsharpPro.Repository;
-using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace CsharpPro.Models;
 
-public class Product:BaseEntity
+public class Product:BaseEntity<int>
 {
     public Product()
     {
     }
 
-    public Product(string name, decimal price, int count, string brandName)
+    public Product(string name, decimal price, int count, string brandName):base(false)
     {
         Name = name;
         Price = price;
