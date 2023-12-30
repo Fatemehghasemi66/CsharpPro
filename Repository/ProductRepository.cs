@@ -11,28 +11,113 @@ public class ProductRepository : IGenericRepository<Product>
     {
 
     };
+    // Read From JSONFILE:
     //public readonly string jsonPData = File.ReadAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory,"FileData", "Pro.json")); 
     //public static List<Product> products = new List<Product>();
     //public ProductRepository()
     //{
     //    //products = JsonConvert.DeserializeObject<List<Product>>(jsonPData);
-        
+
     //}
     public bool AddItem(Product item)
-    
-    {
-       products.Add(item);
-        return true;
-    }
 
+    {
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            try
+            {
+                connection.Open();
+                string tableName = "dbo.Product";
+                string query = $"INSERT INTO {tableName}([Name],[Price],[Count],[BrandName])" +
+                    "VALUES (@Name, @Price, @Count, @BrandName)";
+                SqlCommand command = new SqlCommand(query, connection);
+
+                command.Parameters.AddWithValue("@Name", item.Name);
+                command.Parameters.AddWithValue("@Price", item.Price);
+                command.Parameters.AddWithValue("@Count", item.Count);
+                command.Parameters.AddWithValue("@BrandName", item.BrandName);
+
+
+
+                int rowsAffected = command.ExecuteNonQuery();
+                return rowsAffected > 0;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error {ex.Message}");
+                return false;
+            }
+            finally { connection.Close(); }
+
+        }
+
+    }
     public bool DeleteItem(int id)
     {
-        throw new NotImplementedException();
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            try
+            {
+                connection.Open();
+
+                string query = $"delete dbo.Product where Id = @Id";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@Id", id);
+                int rowsAffected = command.ExecuteNonQuery();
+                return rowsAffected > 0;
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+                return false;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
     }
 
     public Product GetById(object id)
     {
-        return products.Where(x => x.Id == (int)id).FirstOrDefault();
+        Product product = null;
+        string tableName = "dbo.Product";
+        using (SqlConnection conn = new SqlConnection(connectionString))
+        {
+            try
+            {
+                conn.Open();
+                string query = $"SELECT * FROM {tableName} where Id = @Id";
+                SqlCommand command = new SqlCommand(query, connection: conn);
+                command.Parameters.AddWithValue("@Id", id);
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.Read())
+                {
+                    product = new Product
+                    {
+                        Id = (int)reader["Id"],
+                        Name = reader["Name"].ToString(),
+                        Price = (int)reader["Price"],
+                        Count = (int)reader["Count"],
+                        BrandName = reader["BrandName"].ToString(),
+                        IsActive = (bool)reader["IsActive"],
+                        CreationDate = (DateTime)reader["CreationDate"],
+                    };
+
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return product;
+        }
     }
 
     public List<Product> GetIAll()
@@ -76,28 +161,38 @@ public class ProductRepository : IGenericRepository<Product>
         }
     }
 
-    bool IGenericRepository<Product>.AddItem(Product item)
+    public bool UpdateItem(Product item)
     {
-        throw new NotImplementedException();
-    }
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            try
+            {
+                connection.Open();
+                string query = $"UPDATE dbo.Product" +
+                    $"SET Name = @Name," +
+                    $"SET Price = @Price," +
+                    $"SET Count = @Count," +
+                    $"SET BrandName = @BrandName," +
+                    $"WHERE Id = @Id";
 
-    bool IGenericRepository<Product>.DeleteItem(int id)
-    {
-        throw new NotImplementedException();
-    }
-
-    Product IGenericRepository<Product>.GetById(object id)
-    {
-        throw new NotImplementedException();
-    }
-
-    List<Product> IGenericRepository<Product>.GetIAll()
-    {
-        throw new NotImplementedException();
-    }
-
-    bool IGenericRepository<Product>.UpdateItem(Product item)
-    {
-        throw new NotImplementedException();
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@Id", item.Id);
+                command.Parameters.AddWithValue("@Name", item.Name);
+                command.Parameters.AddWithValue("@Price", item.Price);
+                command.Parameters.AddWithValue("@Count", item.Count);
+                command.Parameters.AddWithValue("@BrandName", item.BrandName);
+          
+                int rowsAffected = command.ExecuteNonQuery();
+                return rowsAffected > 0;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error : {ex.Message}");
+                return false;
+            }
+            finally
+            { connection.Close(); }
+        }
     }
 }
+

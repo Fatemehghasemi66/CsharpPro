@@ -1,13 +1,6 @@
 ﻿using CsharpPro.Contracts;
 using CsharpPro.Models;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CsharpPro.Repository;
 

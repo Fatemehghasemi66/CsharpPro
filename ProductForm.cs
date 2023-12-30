@@ -1,4 +1,5 @@
-﻿using CsharpPro.Models;
+﻿using CsharpPro.Enums;
+using CsharpPro.Models;
 using CsharpPro.Repository;
 using System.Globalization;
 using System.Windows.Forms;
@@ -8,6 +9,7 @@ namespace CsharpPro;
 
 public partial class ProductForm : Form
 {
+    Product selectproduct = null;
     public delegate void RefreshDataDeligate();
     public event RefreshDataDeligate RefreshDataEvent;
 
@@ -68,8 +70,8 @@ public partial class ProductForm : Form
             MessageBox.Show($"Product {ProNameTextBox.Text} was successfully inserted");
             Product product = new Product(
                 name: ProNameTextBox.Text,
-                price: decimal.Parse(PriceTextBox.Text), 
-                count: int.Parse(CountTextBox.Text), 
+                price: decimal.Parse(PriceTextBox.Text),
+                count: int.Parse(CountTextBox.Text),
                 brandName: BrandNameTextBox.Text
                 );
             ProductRepository productRepository = new ProductRepository();
@@ -92,4 +94,56 @@ public partial class ProductForm : Form
     {
 
     }
+
+    private void UpdateButton_Click(object sender, EventArgs e)
+    {
+        if (selectproduct == null)
+        {
+            MessageBox.Show("Please Select An Item");
+            return;
+        }
+        ProductRepository productRepository = new ProductRepository();
+        selectproduct.Name = ProNameTextBox.Text;
+        selectproduct.Price = decimal.Parse(PriceTextBox.Text);
+        selectproduct.Count = int.Parse(CountTextBox.Text);
+        selectproduct.BrandName = BrandNameTextBox.Text;
+
+
+        productRepository.UpdateItem(selectproduct);
+        RefreshDataEvent?.Invoke();
+        ClearControl();
+    }
+
+    private void ProductGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+    {
+        if (ProductGridView.SelectedCells.Count > 0)
+        {
+            var selectedRowindex = ProductGridView.SelectedCells[0].RowIndex;
+            var row = ProductGridView.Rows[selectedRowindex];
+            int id = int.Parse(row.Cells["Id"].Value.ToString());
+
+            ProductRepository productRepository = new ProductRepository();
+            Product product = productRepository.GetById(id);
+            ProNameTextBox.Text = product.Name;
+            PriceTextBox.Text = product.Price.ToString();
+            CountTextBox.Text = product.Count.ToString();
+            BrandNameTextBox.Text = product.BrandName;
+
+        }
+    }
+
+    private void DeleteButton_Click(object sender, EventArgs e)
+    {
+        if (selectproduct is null)
+        {
+            MessageBox.Show("Please Select An Item");
+            return;
+        }
+
+        CustomerRepository customerRepository = new CustomerRepository();
+        customerRepository.DeleteItem(id: selectproduct.Id);
+        RefreshDataEvent?.Invoke();
+        ClearControl();
+    }
 }
+

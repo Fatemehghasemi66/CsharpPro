@@ -75,10 +75,7 @@ namespace CsharpPro
                     }
                 }
 
-
-                MessageLable.ForeColor = Color.DarkGreen;
-                MessageLable.Text = $"User {FirstNameTextBox.Text} was added to the list";
-                Customer customer = new Customer(
+                    Customer customer = new Customer(
                     username: UserNameTextBox.Text,
                     password: PasswordTextBox.Text,
                     firstName: FirstNameTextBox.Text,
@@ -92,6 +89,8 @@ namespace CsharpPro
                 CustomerRepository customerRepository = new CustomerRepository();
                 customerRepository.AddItem(item: customer);
                 RefreshDataEvent?.Invoke();
+                MessageLable.ForeColor = Color.DarkGreen;
+                MessageLable.Text = $"User {FirstNameTextBox.Text} was added to the list";
 
             }
             catch (Exception ex)
@@ -164,7 +163,7 @@ namespace CsharpPro
 
         private void UpdateButton_Click(object sender, EventArgs e)
         {
-            if(selectedCustomer == null)
+            if (selectedCustomer == null)
             {
                 MessageBox.Show("Please Select An Item");
                 return;
@@ -177,9 +176,9 @@ namespace CsharpPro
             selectedCustomer.UserName = UserNameTextBox.Text;
             selectedCustomer.Password = PasswordTextBox.Text;
             selectedCustomer.MobileNumber = MobileNumberTextBox.Text;
-            selectedCustomer.Gender = GenderComboBox != null ? (Gender)GenderComboBox.SelectedItem: Gender.NOTSELECTED;
+            selectedCustomer.Gender = GenderComboBox != null ? (Gender)GenderComboBox.SelectedItem : Gender.NOTSELECTED;
             selectedCustomer.BirthDate = (DateTime)BirthDatedateTimePicker.Value.Date;
-            
+
             customerRepository.UpdateItem(selectedCustomer);
             RefreshDataEvent?.Invoke();
             ClearControl();
