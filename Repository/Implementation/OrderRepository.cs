@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CsharpPro.Repository;
+namespace CsharpPro.Repository.Implementation;
 
 public class OrderRepository : IGenericRepository<Order>
 {

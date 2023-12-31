@@ -6,12 +6,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CsharpPro.Repository;
+namespace CsharpPro.Repository.Implementation;
 
-    public class AddressRepository : IGenericRepository<Address>
+public class AddressRepository : IGenericRepository<Address>
 {
     public static List<Address> Address = new List<Address>();
-    public AddressRepository() 
+    public AddressRepository()
     {
     }
 

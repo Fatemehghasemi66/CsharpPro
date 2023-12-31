@@ -9,17 +9,17 @@ using System.Text;
 using System.Threading.Tasks;
 using User = CsharpPro.Models.User;
 
-namespace CsharpPro.Repository
+namespace CsharpPro.Repository.Implementation
 {
     public class UserRepository : IGenericRepository<User>
     {
 
-        public readonly string jsonDataStr = File.ReadAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory,"FileData","User.json"));
+        public readonly string jsonDataStr = File.ReadAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "FileData", "User.json"));
         public static List<User> user = new List<User>();
 
         public UserRepository()
         {
-           user = JsonConvert.DeserializeObject<List<User>>(jsonDataStr);
+            user = JsonConvert.DeserializeObject<List<User>>(jsonDataStr);
 
         }
         public bool AddItem(User item)

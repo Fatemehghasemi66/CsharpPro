@@ -2,7 +2,7 @@
 using CsharpPro.Models;
 using System.Data.SqlClient;
 
-namespace CsharpPro.Repository;
+namespace CsharpPro.Repository.Implementation;
 
 public class ProductRepository : IGenericRepository<Product>
 {
@@ -144,7 +144,7 @@ public class ProductRepository : IGenericRepository<Product>
                         Price = (decimal)reader["Price"],
                         CreationDate = (DateTime)reader["CreatinDate"],
                     };
-                    products.Add(product);  
+                    products.Add(product);
                 }
 
             }
@@ -154,10 +154,10 @@ public class ProductRepository : IGenericRepository<Product>
             }
             finally
             {
-                connection.Close(); 
+                connection.Close();
             }
             return products;
-        
+
         }
     }
 
@@ -181,7 +181,7 @@ public class ProductRepository : IGenericRepository<Product>
                 command.Parameters.AddWithValue("@Price", item.Price);
                 command.Parameters.AddWithValue("@Count", item.Count);
                 command.Parameters.AddWithValue("@BrandName", item.BrandName);
-          
+
                 int rowsAffected = command.ExecuteNonQuery();
                 return rowsAffected > 0;
             }

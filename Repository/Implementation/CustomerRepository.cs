@@ -1,13 +1,16 @@
 ﻿using CsharpPro.Contracts;
 using CsharpPro.Models;
+using CsharpPro.Repository.InterFace;
+using System.Configuration;
 using System.Data.SqlClient;
 
-namespace CsharpPro.Repository;
+namespace CsharpPro.Repository.Implementation;
 
-public class CustomerRepository : IGenericRepository<Customer>
+public class CustomerRepository : ICustomerRepository
 {
+    private readonly string connectionString = ConfigurationManager.ConnectionStrings["FirstDB"].ToString();
 
-    const string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\ASUS\\Documents\\Db-1.mdf;Integrated Security=True;Connect Timeout=30";
+
     //public readonly string jsonData = File.ReadAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "FileData", "Customer.json"));
     //public static List<Customer> people = new List<Customer>();
     //public CustomerRepository()
@@ -177,14 +180,14 @@ public class CustomerRepository : IGenericRepository<Customer>
                 connection.Open();
                 string query = $"UPDATE dbo.Customer" +
                     $"SET FirstName = @FirstName," +
-                    $"SET LastName = @LastName," +
-                    $"SET UserName = @UserName," +
-                    $"SET Password = @Password," +
-                    $"SET Email = @Email," +
-                    $"SET HomeAddress = @HomeAddress," +
-                    $"SET MobileNumber = @MobileNumber," +
-                    $"SET BirthDate = @BirthDate," +
-                    $"SET GenderId = @GenderId" +
+                    $"LastName = @LastName," +
+                    $"UserName = @UserName," +
+                    $"Password = @Password," +
+                    $"Email = @Email," +
+                    $"HomeAddress = @HomeAddress," +
+                    $"MobileNumber = @MobileNumber," +
+                    $"BirthDate = @BirthDate," +
+                    $"GenderId = @GenderId" +
                     $"WHERE Id = @Id";
 
                 SqlCommand command = new SqlCommand(query, connection);
@@ -196,7 +199,7 @@ public class CustomerRepository : IGenericRepository<Customer>
                 command.Parameters.AddWithValue("@Email", item.Email);
                 command.Parameters.AddWithValue("@HomeAddress", item.HomeAddress);
                 command.Parameters.AddWithValue("@MobileNumber", item.MobileNumber);
-                command.Parameters.AddWithValue("BirthDate", item.BirthDate);
+                command.Parameters.AddWithValue("@BirthDate", item.BirthDate);
                 command.Parameters.AddWithValue("@GenderId", (short)item.Gender);
 
                 int rowsAffected = command.ExecuteNonQuery();
