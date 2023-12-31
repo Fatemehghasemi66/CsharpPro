@@ -33,8 +33,7 @@
             customerFormToolStripMenuItem1 = new ToolStripMenuItem();
             customerListToolStripMenuItem = new ToolStripMenuItem();
             productManagmentToolStripMenuItem = new ToolStripMenuItem();
-            pToolStripMenuItem = new ToolStripMenuItem();
-            newProductToolStripMenuItem = new ToolStripMenuItem();
+            productListToolStripMenuItem = new ToolStripMenuItem();
             usersToolStripMenuItem = new ToolStripMenuItem();
             userListToolStripMenuItem = new ToolStripMenuItem();
             newUserToolStripMenuItem = new ToolStripMenuItem();
@@ -75,23 +74,17 @@
             // 
             // productManagmentToolStripMenuItem
             // 
-            productManagmentToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { pToolStripMenuItem, newProductToolStripMenuItem });
+            productManagmentToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { productListToolStripMenuItem });
             productManagmentToolStripMenuItem.Name = "productManagmentToolStripMenuItem";
             productManagmentToolStripMenuItem.Size = new Size(253, 38);
             productManagmentToolStripMenuItem.Text = "Product Managment";
             // 
-            // pToolStripMenuItem
+            // productListToolStripMenuItem
             // 
-            pToolStripMenuItem.Name = "pToolStripMenuItem";
-            pToolStripMenuItem.Size = new Size(284, 44);
-            pToolStripMenuItem.Text = "Product List";
-            pToolStripMenuItem.Click += pToolStripMenuItem_Click;
-            // 
-            // newProductToolStripMenuItem
-            // 
-            newProductToolStripMenuItem.Name = "newProductToolStripMenuItem";
-            newProductToolStripMenuItem.Size = new Size(284, 44);
-            newProductToolStripMenuItem.Text = "New Product";
+            productListToolStripMenuItem.Name = "productListToolStripMenuItem";
+            productListToolStripMenuItem.Size = new Size(359, 44);
+            productListToolStripMenuItem.Text = "ProductList";
+            productListToolStripMenuItem.Click += productListToolStripMenuItem_Click;
             // 
             // usersToolStripMenuItem
             // 
@@ -103,14 +96,14 @@
             // userListToolStripMenuItem
             // 
             userListToolStripMenuItem.Name = "userListToolStripMenuItem";
-            userListToolStripMenuItem.Size = new Size(359, 44);
+            userListToolStripMenuItem.Size = new Size(249, 44);
             userListToolStripMenuItem.Text = "User List";
             userListToolStripMenuItem.Click += userListToolStripMenuItem_Click;
             // 
             // newUserToolStripMenuItem
             // 
             newUserToolStripMenuItem.Name = "newUserToolStripMenuItem";
-            newUserToolStripMenuItem.Size = new Size(359, 44);
+            newUserToolStripMenuItem.Size = new Size(249, 44);
             newUserToolStripMenuItem.Text = "New User";
             // 
             // menuStrip2
@@ -145,11 +138,10 @@
         private MenuStrip menuStrip2;
         private ToolStripMenuItem customerFormToolStripMenuItem1;
         private ToolStripMenuItem productManagmentToolStripMenuItem;
-        private ToolStripMenuItem pToolStripMenuItem;
         private ToolStripMenuItem customerListToolStripMenuItem;
-        private ToolStripMenuItem newProductToolStripMenuItem;
         private ToolStripMenuItem usersToolStripMenuItem;
         private ToolStripMenuItem userListToolStripMenuItem;
         private ToolStripMenuItem newUserToolStripMenuItem;
+        private ToolStripMenuItem productListToolStripMenuItem;
     }
 }

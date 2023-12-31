@@ -30,8 +30,7 @@ namespace CsharpPro
 
         private void pToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ProductForm productForm = new ProductForm();
-            productForm.Show();
+
 
         }
 
@@ -45,6 +44,17 @@ namespace CsharpPro
         {
             UserForm userForm = new UserForm();
             userForm.Show();
+        }
+
+        private void newProductToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void productListToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ProductForm productForm = new ProductForm();
+            productForm.Show();
         }
     }
 }

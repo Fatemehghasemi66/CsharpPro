@@ -16,15 +16,9 @@ public partial class ProductForm : Form
     public ProductForm()
     {
         InitializeComponent();
-        PersianCalendar PC = new PersianCalendar();
-        DateLable.Text = PC.GetYear(DateTime.Now) + "/" + PC.GetMonth(DateTime.Now) + "/" + PC.GetDayOfMonth(DateTime.Now);
-        System.Timers.Timer time = new System.Timers.Timer();
-        TimeLable.Text = DateTime.Now.Hour + ":" + DateTime.Now.Minute + ":" + DateTime.Now.Second;
-
-        RefreshDataEvent += RefreshData;
-
-        ProductRepository Productrepository = new ProductRepository();
-        ProductGridView.DataSource = Productrepository.GetIAll();
+        RefreshDataEvent += LoadFormData;
+        RefreshDataEvent?.Invoke();
+      
     }
     private void LoadFormData()
     {
@@ -34,10 +28,7 @@ public partial class ProductForm : Form
         ProductGridView.DataSource = productRepository;
         ProductGridView.Refresh();
     }
-    private void RefreshData()
-    {
-        LoadFormData();
-    }
+  
 
     public void ClearControl()
     {
@@ -92,7 +83,10 @@ public partial class ProductForm : Form
 
     private void ProductForm_Load(object sender, EventArgs e)
     {
-
+        PersianCalendar PC = new PersianCalendar();
+        DateLable.Text = PC.GetYear(DateTime.Now) + "/" + PC.GetMonth(DateTime.Now) + "/" + PC.GetDayOfMonth(DateTime.Now);
+        System.Timers.Timer time = new System.Timers.Timer();
+        TimeLable.Text = DateTime.Now.Hour + ":" + DateTime.Now.Minute + ":" + DateTime.Now.Second;
     }
 
     private void UpdateButton_Click(object sender, EventArgs e)
