@@ -4,21 +4,16 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
-using System.Linq;
-using System.Net.Mail;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace CsharpPro.Models;
 [DebuggerDisplay("Customer {Id}: {FirstName} {LastName} whith {MobileNumber} Mobile")]
-public class Customer : BaseEntity<int>
+public class Customer : BaseEntity <int>
 {
-    public Customer()
-        {
-        }
+   public Customer() { }    
    
 
-    public Customer( string username, string firstName, string lastName, DateTime? birthDate, string mobileNumber, Gender gender, string homeAddress,
+    public Customer(string username, string firstName, string lastName, DateTime? birthDate, string mobileNumber, Gender gender, string homeAddress,
         string emailAddress,string password):base(false)
     {
         UserName = username;
@@ -68,3 +63,4 @@ public class Customer : BaseEntity<int>
         throw new NotImplementedException();
     }
 }
+

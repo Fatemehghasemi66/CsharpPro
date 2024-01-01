@@ -188,7 +188,7 @@ public class CustomerRepository : ICustomerRepository
                     $"MobileNumber = @MobileNumber," +
                     $"BirthDate = @BirthDate," +
                     $"GenderId = @GenderId" +
-                    $"WHERE Id = @Id";
+                    $" WHERE Id = @Id";
 
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@Id", item.Id);

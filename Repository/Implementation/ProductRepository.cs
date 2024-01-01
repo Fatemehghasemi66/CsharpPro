@@ -1,16 +1,18 @@
 ﻿using CsharpPro.Contracts;
 using CsharpPro.Models;
+using CsharpPro.Repository.InterFace;
+using System.Configuration;
 using System.Data.SqlClient;
 
 namespace CsharpPro.Repository.Implementation;
 
-public class ProductRepository : IGenericRepository<Product>
+public class ProductRepository : IProductRepository
 {
-    const string connectionString = "Data Source=Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\ASUS\\Documents\\Db-1.mdf;Integrated Security=True;Connect Timeout=30";
-    public static List<Product> products = new List<Product>()
-    {
+    private readonly string connectionString = ConfigurationManager.ConnectionStrings["FirstDB"].ToString();
+    //public static List<Product> products = new List<Product>()
+    //{
 
-    };
+    //};
     // Read From JSONFILE:
     //public readonly string jsonPData = File.ReadAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory,"FileData", "Pro.json")); 
     //public static List<Product> products = new List<Product>();
