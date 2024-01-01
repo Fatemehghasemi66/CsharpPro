@@ -178,7 +178,7 @@ public class CustomerRepository : ICustomerRepository
             try
             {
                 connection.Open();
-                string query = $"UPDATE dbo.Customer" +
+                string query = $"UPDATE dbo.Customer " +
                     $"SET FirstName = @FirstName," +
                     $"LastName = @LastName," +
                     $"UserName = @UserName," +
@@ -188,7 +188,7 @@ public class CustomerRepository : ICustomerRepository
                     $"MobileNumber = @MobileNumber," +
                     $"BirthDate = @BirthDate," +
                     $"GenderId = @GenderId" +
-                    $"WHERE Id = @Id";
+                    $" WHERE Id = @Id";
 
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@Id", item.Id);
