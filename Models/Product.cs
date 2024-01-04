@@ -1,7 +1,7 @@
-﻿using CsharpPro.Contracts;
+﻿using SharpPro.Contracts;
 
 
-namespace CsharpPro.Models;
+namespace SharpPro.Models;
 
 public class Product:BaseEntity<int>
 {

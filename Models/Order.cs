@@ -1,19 +1,19 @@
-﻿using CsharpPro.Contracts;
+﻿using SharpPro.Contracts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CsharpPro.Models
+namespace SharpPro.Models
 {
-    internal class Order : BaseEntity<int>
+    public class Order : BaseEntity<int>
     {
-        public string code { get; set; }
-        public DateTime Orderdate { get; set; }
-        public int AddresId { get; set; }
+        public string? Code { get; set; }
+        public DateTime OrderDate { get; set; }
+        public int AddressId { get; set; }
         public int CustomerId { get; set; }
-        public List<OrderItem> OrderItems { get; set; } 
+        //public List<OrderItem> OrderItems { get; set; } 
         public override bool IsActiveItem()
         {
             throw new NotImplementedException();

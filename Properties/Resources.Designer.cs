@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CsharpPro.Properties {
+namespace SharpPro.Properties {
     using System;
     
     

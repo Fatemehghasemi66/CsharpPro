@@ -1,6 +1,6 @@
-﻿using CsharpPro.Enums;
-using CsharpPro.Models;
-using CsharpPro.Repository.Implementation;
+﻿using CsharpPro.Repository.Implementation;
+using SharpPro.Models;
+using SharpPro.Repository.InterFace;
 using System.Globalization;
 
 
@@ -8,28 +8,32 @@ namespace CsharpPro;
 
 public partial class ProductForm : Form
 {
-    Product selectproduct = null;
-    public delegate void RefreshDataDeligate();
-    public event RefreshDataDeligate RefreshDataEvent;
+    Product selectedproduct = null;
+    public delegate void RefreshDataDelegate();
+    public event RefreshDataDelegate RefreshDataEvent;
 
-    public ProductForm()
+    private readonly IProductRepository _productRepository;
+    public ProductForm(IProductRepository productRepository)
     {
+        _productRepository = productRepository;
         InitializeComponent();
         RefreshDataEvent += LoadFormData;
         RefreshDataEvent?.Invoke();
-      
+
     }
+
+ 
+
     private void LoadFormData()
     {
-        ProductRepository productRepository = new ProductRepository();
-        ProductGridView.DataSource = productRepository.GetIAll();
+        List<Product> products = _productRepository.GetIAll();
         ProductGridView.DataSource = null;
-        ProductGridView.DataSource = productRepository;
+        ProductGridView.DataSource = products;
         ProductGridView.Refresh();
     }
-  
 
-    public void ClearControl()
+
+    public void ClearForm()
     {
         foreach (Control ctrl in Controls)
         {
@@ -65,7 +69,9 @@ public partial class ProductForm : Form
                 brandName: BrandNameTextBox.Text
                 );
             ProductRepository productRepository = new ProductRepository();
-            productRepository.AddItem(product);
+            int productId = 0;
+            productRepository.AddItem(product, id: out productId);
+     
             RefreshDataEvent?.Invoke();
         }
         catch (Exception ex)
@@ -74,7 +80,7 @@ public partial class ProductForm : Form
         }
         finally
         {
-            ClearControl();
+            ClearForm();
         }
 
 
@@ -90,21 +96,20 @@ public partial class ProductForm : Form
 
     private void UpdateButton_Click(object sender, EventArgs e)
     {
-        if (selectproduct == null)
+        if (selectedproduct is null)
         {
             MessageBox.Show("Please Select An Item");
             return;
         }
-        ProductRepository productRepository = new ProductRepository();
-        selectproduct.Name = ProNameTextBox.Text;
-        selectproduct.Price = decimal.Parse(PriceTextBox.Text);
-        selectproduct.Count = int.Parse(CountTextBox.Text);
-        selectproduct.BrandName = BrandNameTextBox.Text;
+        selectedproduct.Name = ProNameTextBox.Text;
+        selectedproduct.Price = decimal.Parse(PriceTextBox.Text);
+        selectedproduct.Count = int.Parse(CountTextBox.Text);
+        selectedproduct.BrandName = BrandNameTextBox.Text;
 
 
-        productRepository.UpdateItem(selectproduct);
+        _productRepository.UpdateItem(selectedproduct);
         RefreshDataEvent?.Invoke();
-        ClearControl();
+        ClearForm();
     }
 
     private void ProductGridView_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -115,28 +120,37 @@ public partial class ProductForm : Form
             var row = ProductGridView.Rows[selectedRowindex];
             int id = int.Parse(row.Cells["Id"].Value.ToString());
 
-            ProductRepository productRepository = new ProductRepository();
-            Product product = productRepository.GetById(id);
+            Product product = _productRepository.GetById(id);
             ProNameTextBox.Text = product.Name;
             PriceTextBox.Text = product.Price.ToString();
             CountTextBox.Text = product.Count.ToString();
             BrandNameTextBox.Text = product.BrandName;
+            selectedproduct = product;
 
         }
     }
 
     private void DeleteButton_Click(object sender, EventArgs e)
     {
-        if (selectproduct is null)
+        if (selectedproduct is null)
         {
             MessageBox.Show("Please Select An Item");
             return;
         }
 
-        CustomerRepository customerRepository = new CustomerRepository();
-        customerRepository.DeleteItem(id: selectproduct.Id);
+        _productRepository.DeleteItem(id: selectedproduct.Id);
         RefreshDataEvent?.Invoke();
-        ClearControl();
+        ClearForm();
+    }
+
+    private void ActiveProductCheckBox_CheckedChanged(object sender, EventArgs e)
+    {
+
+    }
+
+    private void ProductGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+    {
+
     }
 }
 

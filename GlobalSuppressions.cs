@@ -5,4 +5,4 @@
 
 using System.Diagnostics.CodeAnalysis;
 
-[assembly: SuppressMessage("Style", "IDE0063:Use simple 'using' statement", Justification = "<Pending>", Scope = "member", Target = "~M:CsharpPro.Repository.ProductRepository.GetIAll~System.Collections.Generic.List{CsharpPro.Models.Product}")]
+[assembly: SuppressMessage("Style", "IDE0063:Use simple 'using' statement", Justification = "<Pending>", Scope = "member", Target = "~M:SharpPro.Repository.ProductRepository.GetIAll~System.Collections.Generic.List{CsharpPro.Models.Product}")]

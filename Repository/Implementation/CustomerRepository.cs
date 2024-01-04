@@ -1,16 +1,19 @@
-﻿using CsharpPro.Contracts;
-using CsharpPro.Models;
-using CsharpPro.Repository.InterFace;
+﻿using SharpPro.Contracts;
+using SharpPro.Models;
+using SharpPro.Repository.InterFace;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 
-namespace CsharpPro.Repository.Implementation;
+namespace SharpPro.Repository.Implementation;
 
 public class CustomerRepository : ICustomerRepository
 {
     private readonly string connectionString = ConfigurationManager.ConnectionStrings["FirstDB"].ToString();
 
-
+    public CustomerRepository()
+    {
+    }
     //public readonly string jsonData = File.ReadAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "FileData", "Customer.json"));
     //public static List<Customer> people = new List<Customer>();
     //public CustomerRepository()
@@ -18,17 +21,15 @@ public class CustomerRepository : ICustomerRepository
     //    //people = JsonConvert.DeserializeObject<List<Customer>>(jsonData);
     //}
 
-    public bool AddItem(Customer item)
+    public bool AddItem(Customer item, out int id)
     {
-        using (SqlConnection conn = new SqlConnection(connectionString))
+        using (SqlConnection connection = new SqlConnection(connectionString))
         {
             try
             {
-                conn.Open();
-                string tableName = "dbo.Customer";
-                string query = $"INSERT INTO {tableName}([UserName],[Password],[FirstName],[LastName],[Email],[MobileNumber],[BirthDate],[HomeAddress],[GenderId])" +
-                    "VALUES (@UserName, @Password, @FirstName, @LastName, @Email, @MobileNumber,@BirthDate,@GenderId, @HomeAddress)";
-                SqlCommand cmd = new SqlCommand(query, conn);
+                connection.Open();
+                SqlCommand cmd = new SqlCommand("InsertCustomer", connection);
+                cmd.CommandType = CommandType.StoredProcedure;
 
                 cmd.Parameters.AddWithValue("@UserName", item.UserName);
                 cmd.Parameters.AddWithValue("@Password", item.Password);
@@ -40,17 +41,24 @@ public class CustomerRepository : ICustomerRepository
                 cmd.Parameters.AddWithValue("BirthDate", item.BirthDate);
                 cmd.Parameters.AddWithValue("@GenderId", (short)item.Gender);
 
-
+                SqlParameter outputParameter = new SqlParameter("@CustomerId", SqlDbType.Int);
+                outputParameter.Direction = ParameterDirection.Output;
+                cmd.Parameters.Add(outputParameter);
+          
                 int rowsAffected = cmd.ExecuteNonQuery();
-                return rowsAffected > 0;
+
+                int customerId = Convert.ToInt32(outputParameter.Value);
+                id = customerId;
+                return rowsAffected>0;
 
             }
             catch (Exception ex)
             {
+                id = 0;
                 MessageBox.Show($"Error {ex.Message}");
                 return false;
             }
-            finally { conn.Close(); }
+            finally { connection.Close(); }
 
         }
     }
@@ -211,7 +219,9 @@ public class CustomerRepository : ICustomerRepository
                 return false;
             }
             finally
-            { connection.Close(); }
+            { 
+                connection.Close(); 
+            }
         }
     }
 }

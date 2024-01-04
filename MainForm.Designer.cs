@@ -11,14 +11,7 @@
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+
 
         #region Windows Form Designer generated code
 
@@ -34,17 +27,18 @@
             customerListToolStripMenuItem = new ToolStripMenuItem();
             productManagmentToolStripMenuItem = new ToolStripMenuItem();
             productListToolStripMenuItem = new ToolStripMenuItem();
-            usersToolStripMenuItem = new ToolStripMenuItem();
-            userListToolStripMenuItem = new ToolStripMenuItem();
-            newUserToolStripMenuItem = new ToolStripMenuItem();
             menuStrip2 = new MenuStrip();
+            logoPictureBox = new PictureBox();
+            orderManagementToolStripMenuItem = new ToolStripMenuItem();
+            saveOrderToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)logoPictureBox).BeginInit();
             SuspendLayout();
             // 
             // menuStrip1
             // 
             menuStrip1.ImageScalingSize = new Size(32, 32);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { customerFormToolStripMenuItem, productManagmentToolStripMenuItem, usersToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { customerFormToolStripMenuItem, productManagmentToolStripMenuItem, orderManagementToolStripMenuItem });
             menuStrip1.Location = new Point(0, 24);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(961, 42);
@@ -62,14 +56,14 @@
             // customerFormToolStripMenuItem1
             // 
             customerFormToolStripMenuItem1.Name = "customerFormToolStripMenuItem1";
-            customerFormToolStripMenuItem1.Size = new Size(312, 44);
+            customerFormToolStripMenuItem1.Size = new Size(359, 44);
             customerFormToolStripMenuItem1.Text = "Customer List";
             customerFormToolStripMenuItem1.Click += customerFormToolStripMenuItem1_Click;
             // 
             // customerListToolStripMenuItem
             // 
             customerListToolStripMenuItem.Name = "customerListToolStripMenuItem";
-            customerListToolStripMenuItem.Size = new Size(312, 44);
+            customerListToolStripMenuItem.Size = new Size(359, 44);
             customerListToolStripMenuItem.Text = "New Customer ";
             // 
             // productManagmentToolStripMenuItem
@@ -86,26 +80,6 @@
             productListToolStripMenuItem.Text = "ProductList";
             productListToolStripMenuItem.Click += productListToolStripMenuItem_Click;
             // 
-            // usersToolStripMenuItem
-            // 
-            usersToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { userListToolStripMenuItem, newUserToolStripMenuItem });
-            usersToolStripMenuItem.Name = "usersToolStripMenuItem";
-            usersToolStripMenuItem.Size = new Size(91, 38);
-            usersToolStripMenuItem.Text = "Users";
-            // 
-            // userListToolStripMenuItem
-            // 
-            userListToolStripMenuItem.Name = "userListToolStripMenuItem";
-            userListToolStripMenuItem.Size = new Size(249, 44);
-            userListToolStripMenuItem.Text = "User List";
-            userListToolStripMenuItem.Click += userListToolStripMenuItem_Click;
-            // 
-            // newUserToolStripMenuItem
-            // 
-            newUserToolStripMenuItem.Name = "newUserToolStripMenuItem";
-            newUserToolStripMenuItem.Size = new Size(249, 44);
-            newUserToolStripMenuItem.Text = "New User";
-            // 
             // menuStrip2
             // 
             menuStrip2.ImageScalingSize = new Size(32, 32);
@@ -115,18 +89,43 @@
             menuStrip2.TabIndex = 1;
             menuStrip2.Text = "menuStrip2";
             // 
+            // logoPictureBox
+            // 
+            logoPictureBox.Location = new Point(49, 112);
+            logoPictureBox.Name = "logoPictureBox";
+            logoPictureBox.Size = new Size(868, 537);
+            logoPictureBox.TabIndex = 2;
+            logoPictureBox.TabStop = false;
+            // 
+            // orderManagementToolStripMenuItem
+            // 
+            orderManagementToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { saveOrderToolStripMenuItem });
+            orderManagementToolStripMenuItem.Name = "orderManagementToolStripMenuItem";
+            orderManagementToolStripMenuItem.Size = new Size(238, 38);
+            orderManagementToolStripMenuItem.Text = "OrderManagement";
+            // 
+            // saveOrderToolStripMenuItem
+            // 
+            saveOrderToolStripMenuItem.Name = "saveOrderToolStripMenuItem";
+            saveOrderToolStripMenuItem.Size = new Size(359, 44);
+            saveOrderToolStripMenuItem.Text = "SaveOrder";
+            saveOrderToolStripMenuItem.Click += saveOrderToolStripMenuItem_Click;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(961, 688);
+            Controls.Add(logoPictureBox);
             Controls.Add(menuStrip1);
             Controls.Add(menuStrip2);
             MainMenuStrip = menuStrip1;
             Name = "MainForm";
             Text = "MainForm";
+            Load += MainForm_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)logoPictureBox).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -139,9 +138,9 @@
         private ToolStripMenuItem customerFormToolStripMenuItem1;
         private ToolStripMenuItem productManagmentToolStripMenuItem;
         private ToolStripMenuItem customerListToolStripMenuItem;
-        private ToolStripMenuItem usersToolStripMenuItem;
-        private ToolStripMenuItem userListToolStripMenuItem;
-        private ToolStripMenuItem newUserToolStripMenuItem;
         private ToolStripMenuItem productListToolStripMenuItem;
+        private PictureBox logoPictureBox;
+        private ToolStripMenuItem orderManagementToolStripMenuItem;
+        private ToolStripMenuItem saveOrderToolStripMenuItem;
     }
 }

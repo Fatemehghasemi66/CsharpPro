@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace SharpPro.Repository.InterFace;
 
-public interface IProductRepository:IGenericRepository<Product>
+public interface IOrderRepository : IGenericRepository<Order>
 {
+    public bool AddSubItem(OrderItem item);
 }

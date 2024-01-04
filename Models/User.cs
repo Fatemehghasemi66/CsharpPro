@@ -1,8 +1,8 @@
-﻿using CsharpPro.Contracts;
-using CsharpPro.Enums;
+﻿using SharpPro.Contracts;
+using SharpPro.Enums;
 using System.DirectoryServices;
 
-namespace CsharpPro.Models;
+namespace SharpPro.Models;
 
 public class User : BaseEntity<int>
 {

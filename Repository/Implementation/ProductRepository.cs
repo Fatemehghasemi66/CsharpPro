@@ -1,7 +1,8 @@
-﻿using CsharpPro.Contracts;
-using CsharpPro.Models;
-using CsharpPro.Repository.InterFace;
+﻿using SharpPro.Contracts;
+using SharpPro.Models;
+using SharpPro.Repository.InterFace;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 
 namespace CsharpPro.Repository.Implementation;
@@ -9,10 +10,9 @@ namespace CsharpPro.Repository.Implementation;
 public class ProductRepository : IProductRepository
 {
     private readonly string connectionString = ConfigurationManager.ConnectionStrings["FirstDB"].ToString();
-    //public static List<Product> products = new List<Product>()
-    //{
-
-    //};
+    public ProductRepository()
+    {
+    }
     // Read From JSONFILE:
     //public readonly string jsonPData = File.ReadAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory,"FileData", "Pro.json")); 
     //public static List<Product> products = new List<Product>();
@@ -21,7 +21,7 @@ public class ProductRepository : IProductRepository
     //    //products = JsonConvert.DeserializeObject<List<Product>>(jsonPData);
 
     //}
-    public bool AddItem(Product item)
+    public bool AddItem(Product item, out int id)
 
     {
         using (SqlConnection connection = new SqlConnection(connectionString))
@@ -29,24 +29,27 @@ public class ProductRepository : IProductRepository
             try
             {
                 connection.Open();
-                string tableName = "dbo.Product";
-                string query = $"INSERT INTO {tableName}([Name],[Price],[Count],[BrandName])" +
-                    "VALUES (@Name, @Price, @Count, @BrandName)";
-                SqlCommand command = new SqlCommand(query, connection);
+                SqlCommand command = new SqlCommand("InsertProduct", connection);
+                command.CommandType = CommandType.StoredProcedure;
 
                 command.Parameters.AddWithValue("@Name", item.Name);
                 command.Parameters.AddWithValue("@Price", item.Price);
                 command.Parameters.AddWithValue("@Count", item.Count);
                 command.Parameters.AddWithValue("@BrandName", item.BrandName);
-
+                SqlParameter outputParameter = new SqlParameter("@ProductId", SqlDbType.Int);
+                outputParameter.Direction = ParameterDirection.Output;
+                command.Parameters.Add(outputParameter);
 
 
                 int rowsAffected = command.ExecuteNonQuery();
-                return rowsAffected > 0;
+                int productId = Convert.ToInt32(outputParameter.Value);
+                id = productId;
+                return rowsAffected>0;
 
             }
             catch (Exception ex)
             {
+                id = 0;
                 MessageBox.Show($"Error {ex.Message}");
                 return false;
             }
@@ -101,7 +104,7 @@ public class ProductRepository : IProductRepository
                     {
                         Id = (int)reader["Id"],
                         Name = reader["Name"].ToString(),
-                        Price = (int)reader["Price"],
+                        Price = (decimal)reader["Price"],
                         Count = (int)reader["Count"],
                         BrandName = reader["BrandName"].ToString(),
                         IsActive = (bool)reader["IsActive"],
@@ -144,7 +147,7 @@ public class ProductRepository : IProductRepository
                         Count = (int)reader["Count"],
                         IsActive = (bool)reader["IsActive"],
                         Price = (decimal)reader["Price"],
-                        CreationDate = (DateTime)reader["CreatinDate"],
+                        CreationDate = (DateTime)reader["CreationDate"],
                     };
                     products.Add(product);
                 }
@@ -170,14 +173,9 @@ public class ProductRepository : IProductRepository
             try
             {
                 connection.Open();
-                string query = $"UPDATE dbo.Product" +
-                    $"SET Name = @Name," +
-                    $"SET Price = @Price," +
-                    $"SET Count = @Count," +
-                    $"SET BrandName = @BrandName," +
-                    $"WHERE Id = @Id";
-
-                SqlCommand command = new SqlCommand(query, connection);
+                SqlCommand command = new SqlCommand("InsertProduct", connection);
+                command.CommandType = CommandType.StoredProcedure;
+                
                 command.Parameters.AddWithValue("@Id", item.Id);
                 command.Parameters.AddWithValue("@Name", item.Name);
                 command.Parameters.AddWithValue("@Price", item.Price);
@@ -196,5 +194,7 @@ public class ProductRepository : IProductRepository
             { connection.Close(); }
         }
     }
+
+
 }
 

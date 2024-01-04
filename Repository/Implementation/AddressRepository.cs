@@ -1,20 +1,20 @@
-﻿using CsharpPro.Contracts;
-using CsharpPro.Models;
+﻿using SharpPro.Contracts;
+using SharpPro.Models;
+using SharpPro.Repository.InterFace;
+using System.Configuration;
 
+namespace SharpPro.Repository.Implementation;
 
-namespace CsharpPro.Repository.Implementation;
-
-public class AddressRepository : IGenericRepository<Address>
+public class AddressRepository : IAddressRepository
 {
-    public static List<Address> Address = new List<Address>();
+    private readonly string connectionString = ConfigurationManager.ConnectionStrings["FirstDB"].ToString();
     public AddressRepository()
     {
     }
 
-    public bool AddItem(Address item)
+    public bool AddItem(Address item, out int id)
     {
-        Address.Add(item);
-        return true;
+        throw new NotImplementedException();
     }
 
     public bool DeleteItem(int id)
@@ -29,7 +29,7 @@ public class AddressRepository : IGenericRepository<Address>
 
     public List<Address> GetIAll()
     {
-        return Address;
+        throw new NotImplementedException();
     }
 
     public bool UpdateItem(Address item)

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CsharpPro.Enums
+namespace SharpPro.Enums
 {
     public enum OrderStateEnum
     {

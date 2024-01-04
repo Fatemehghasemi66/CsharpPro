@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CsharpPro
+namespace SharpPro
 {
     public partial class OrderForm : Form
     {

@@ -1,12 +1,12 @@
-﻿using CsharpPro.Contracts;
-using CsharpPro.Enums;
+﻿using SharpPro.Contracts;
+using SharpPro.Enums;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
 
 
-namespace CsharpPro.Models;
+namespace SharpPro.Models;
 [DebuggerDisplay("Customer {Id}: {FirstName} {LastName} whith {MobileNumber} Mobile")]
 public class Customer : BaseEntity <int>
 {

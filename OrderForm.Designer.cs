@@ -1,4 +1,4 @@
-﻿namespace CsharpPro
+﻿namespace SharpPro
 {
     partial class OrderForm
     {

@@ -4,6 +4,6 @@ using SharpPro.Models;
 
 namespace SharpPro.Repository.InterFace;
 
-public interface ICustomerRepository : IGenericRepository<Customer>
+public interface IAddressRepository:IGenericRepository<Address>
 {
 }

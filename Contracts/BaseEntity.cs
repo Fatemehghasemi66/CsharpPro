@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 
 
-namespace CsharpPro.Contracts;
+namespace SharpPro.Contracts;
 
 public abstract class BaseEntity<TId>
 {
