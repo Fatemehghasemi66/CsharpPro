@@ -7,13 +7,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using User = SharpPro.Models.User;
+using UserLogin = SharpPro.Models.UserLogin;
 
 namespace SharpPro.Repository.Implementation
 {
-    public class UserRepository : IGenericRepository<User>
+    public class UserRepository : IGenericRepository<UserLogin>
     {
-        public bool AddItem(User item, out int id)
+        public bool AddItem(UserLogin item, out int id)
         {
             throw new NotImplementedException();
         }
@@ -23,17 +23,17 @@ namespace SharpPro.Repository.Implementation
             throw new NotImplementedException();
         }
 
-        public User GetById(object id)
+        public UserLogin GetById(object id)
         {
             throw new NotImplementedException();
         }
 
-        public List<User> GetIAll()
+        public List<UserLogin> GetIAll()
         {
             throw new NotImplementedException();
         }
 
-        public bool UpdateItem(User item)
+        public bool UpdateItem(UserLogin item)
         {
             throw new NotImplementedException();
         }

@@ -27,10 +27,10 @@
             customerListToolStripMenuItem = new ToolStripMenuItem();
             productManagmentToolStripMenuItem = new ToolStripMenuItem();
             productListToolStripMenuItem = new ToolStripMenuItem();
-            menuStrip2 = new MenuStrip();
-            logoPictureBox = new PictureBox();
             orderManagementToolStripMenuItem = new ToolStripMenuItem();
             saveOrderToolStripMenuItem = new ToolStripMenuItem();
+            menuStrip2 = new MenuStrip();
+            logoPictureBox = new PictureBox();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)logoPictureBox).BeginInit();
             SuspendLayout();
@@ -41,7 +41,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { customerFormToolStripMenuItem, productManagmentToolStripMenuItem, orderManagementToolStripMenuItem });
             menuStrip1.Location = new Point(0, 24);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(961, 42);
+            menuStrip1.Size = new Size(1617, 40);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -49,73 +49,75 @@
             // 
             customerFormToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { customerFormToolStripMenuItem1, customerListToolStripMenuItem });
             customerFormToolStripMenuItem.Name = "customerFormToolStripMenuItem";
-            customerFormToolStripMenuItem.Size = new Size(287, 38);
+            customerFormToolStripMenuItem.Size = new Size(287, 36);
             customerFormToolStripMenuItem.Text = "Customer Management";
             customerFormToolStripMenuItem.Click += customerFormToolStripMenuItem_Click;
             // 
             // customerFormToolStripMenuItem1
             // 
             customerFormToolStripMenuItem1.Name = "customerFormToolStripMenuItem1";
-            customerFormToolStripMenuItem1.Size = new Size(359, 44);
+            customerFormToolStripMenuItem1.Size = new Size(312, 44);
             customerFormToolStripMenuItem1.Text = "Customer List";
             customerFormToolStripMenuItem1.Click += customerFormToolStripMenuItem1_Click;
             // 
             // customerListToolStripMenuItem
             // 
             customerListToolStripMenuItem.Name = "customerListToolStripMenuItem";
-            customerListToolStripMenuItem.Size = new Size(359, 44);
+            customerListToolStripMenuItem.Size = new Size(312, 44);
             customerListToolStripMenuItem.Text = "New Customer ";
             // 
             // productManagmentToolStripMenuItem
             // 
             productManagmentToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { productListToolStripMenuItem });
             productManagmentToolStripMenuItem.Name = "productManagmentToolStripMenuItem";
-            productManagmentToolStripMenuItem.Size = new Size(253, 38);
+            productManagmentToolStripMenuItem.Size = new Size(253, 36);
             productManagmentToolStripMenuItem.Text = "Product Managment";
             // 
             // productListToolStripMenuItem
             // 
             productListToolStripMenuItem.Name = "productListToolStripMenuItem";
-            productListToolStripMenuItem.Size = new Size(359, 44);
+            productListToolStripMenuItem.Size = new Size(264, 44);
             productListToolStripMenuItem.Text = "ProductList";
             productListToolStripMenuItem.Click += productListToolStripMenuItem_Click;
+            // 
+            // orderManagementToolStripMenuItem
+            // 
+            orderManagementToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { saveOrderToolStripMenuItem });
+            orderManagementToolStripMenuItem.Name = "orderManagementToolStripMenuItem";
+            orderManagementToolStripMenuItem.Size = new Size(238, 36);
+            orderManagementToolStripMenuItem.Text = "OrderManagement";
+            // 
+            // saveOrderToolStripMenuItem
+            // 
+            saveOrderToolStripMenuItem.Name = "saveOrderToolStripMenuItem";
+            saveOrderToolStripMenuItem.Size = new Size(258, 44);
+            saveOrderToolStripMenuItem.Text = "SaveOrder";
+            saveOrderToolStripMenuItem.Click += saveOrderToolStripMenuItem_Click;
             // 
             // menuStrip2
             // 
             menuStrip2.ImageScalingSize = new Size(32, 32);
             menuStrip2.Location = new Point(0, 0);
             menuStrip2.Name = "menuStrip2";
-            menuStrip2.Size = new Size(961, 24);
+            menuStrip2.Size = new Size(1617, 24);
             menuStrip2.TabIndex = 1;
             menuStrip2.Text = "menuStrip2";
             // 
             // logoPictureBox
             // 
-            logoPictureBox.Location = new Point(49, 112);
+            logoPictureBox.Location = new Point(308, 234);
             logoPictureBox.Name = "logoPictureBox";
-            logoPictureBox.Size = new Size(868, 537);
+            logoPictureBox.Size = new Size(918, 932);
             logoPictureBox.TabIndex = 2;
             logoPictureBox.TabStop = false;
-            // 
-            // orderManagementToolStripMenuItem
-            // 
-            orderManagementToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { saveOrderToolStripMenuItem });
-            orderManagementToolStripMenuItem.Name = "orderManagementToolStripMenuItem";
-            orderManagementToolStripMenuItem.Size = new Size(238, 38);
-            orderManagementToolStripMenuItem.Text = "OrderManagement";
-            // 
-            // saveOrderToolStripMenuItem
-            // 
-            saveOrderToolStripMenuItem.Name = "saveOrderToolStripMenuItem";
-            saveOrderToolStripMenuItem.Size = new Size(359, 44);
-            saveOrderToolStripMenuItem.Text = "SaveOrder";
-            saveOrderToolStripMenuItem.Click += saveOrderToolStripMenuItem_Click;
+            logoPictureBox.Click += logoPictureBox_Click;
             // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(961, 688);
+            BackColor = Color.NavajoWhite;
+            ClientSize = new Size(1617, 1231);
             Controls.Add(logoPictureBox);
             Controls.Add(menuStrip1);
             Controls.Add(menuStrip2);

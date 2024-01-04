@@ -173,7 +173,7 @@ public class ProductRepository : IProductRepository
             try
             {
                 connection.Open();
-                SqlCommand command = new SqlCommand("InsertProduct", connection);
+                SqlCommand command = new SqlCommand("UpdateProduct", connection);
                 command.CommandType = CommandType.StoredProcedure;
                 
                 command.Parameters.AddWithValue("@Id", item.Id);

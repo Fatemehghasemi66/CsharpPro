@@ -186,19 +186,9 @@ public class CustomerRepository : ICustomerRepository
             try
             {
                 connection.Open();
-                string query = $"UPDATE dbo.Customer " +
-                    $"SET FirstName = @FirstName," +
-                    $"LastName = @LastName," +
-                    $"UserName = @UserName," +
-                    $"Password = @Password," +
-                    $"Email = @Email," +
-                    $"HomeAddress = @HomeAddress," +
-                    $"MobileNumber = @MobileNumber," +
-                    $"BirthDate = @BirthDate," +
-                    $"GenderId = @GenderId" +
-                    $" WHERE Id = @Id";
+                SqlCommand command = new SqlCommand("UpdateCustomer", connection);
+                command.CommandType = CommandType.StoredProcedure;
 
-                SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@Id", item.Id);
                 command.Parameters.AddWithValue("@UserName", item.UserName);
                 command.Parameters.AddWithValue("@Password", item.Password);

@@ -28,7 +28,7 @@ public partial class MainForm : Form
         _productRepository = new ProductRepository();
         _addressRepository = new AddressRepository();
         _orderRepository = new OrderRepository();
-        string logoImagePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Content", "Images", "Logo.jpg");
+        string logoImagePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Content", "Images", "MainLogo.png");
         logoPictureBox.ImageLocation = logoImagePath;
         logoPictureBox.SizeMode = PictureBoxSizeMode.Normal;
 
@@ -81,7 +81,12 @@ public partial class MainForm : Form
 
     private void saveOrderToolStripMenuItem_Click(object sender, EventArgs e)
     {
-        SaveOrderForm saveOrderForm = new SaveOrderForm(_customerRepository,_productRepository,_orderRepository);
+        SaveOrderForm saveOrderForm = new SaveOrderForm(_customerRepository, _productRepository, _orderRepository);
         saveOrderForm.Show();
+    }
+
+    private void logoPictureBox_Click(object sender, EventArgs e)
+    {
+
     }
 }
