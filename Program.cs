@@ -24,7 +24,7 @@ internal static class Program
            .AddTransient<IAddressRepository, AddressRepository>()
            .BuildServiceProvider();
         ApplicationConfiguration.Initialize();
-        Application.Run(new LoginForm());
+        Application.Run(new MainForm());
 
     }
 }

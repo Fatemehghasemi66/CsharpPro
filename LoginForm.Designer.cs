@@ -33,6 +33,8 @@
             UserName = new Label();
             Password = new Label();
             PasswordTextBox = new TextBox();
+            RegisterButton = new Button();
+            label1 = new Label();
             SuspendLayout();
             // 
             // button3
@@ -82,18 +84,44 @@
             PasswordTextBox.Size = new Size(340, 39);
             PasswordTextBox.TabIndex = 5;
             // 
+            // RegisterButton
+            // 
+            RegisterButton.BackColor = Color.FromArgb(255, 192, 192);
+            RegisterButton.ImageAlign = ContentAlignment.MiddleLeft;
+            RegisterButton.Location = new Point(320, 448);
+            RegisterButton.Name = "RegisterButton";
+            RegisterButton.Size = new Size(149, 51);
+            RegisterButton.TabIndex = 7;
+            RegisterButton.Text = "Register";
+            RegisterButton.UseVisualStyleBackColor = false;
+            RegisterButton.Click += RegisterButton_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.ForeColor = Color.FromArgb(255, 192, 192);
+            label1.Location = new Point(259, 398);
+            label1.Name = "label1";
+            label1.Size = new Size(282, 32);
+            label1.TabIndex = 8;
+            label1.Text = "If you do not have a user";
+            // 
             // LoginForm
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DimGray;
-            ClientSize = new Size(762, 509);
+            ClientSize = new Size(762, 563);
+            Controls.Add(label1);
+            Controls.Add(RegisterButton);
             Controls.Add(Password);
             Controls.Add(PasswordTextBox);
             Controls.Add(UserName);
             Controls.Add(userNameTextBox);
             Controls.Add(button3);
+            ForeColor = Color.Gray;
             Name = "LoginForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "LoginForm";
             WindowState = FormWindowState.Minimized;
             ResumeLayout(false);
@@ -107,5 +135,7 @@
         private Label UserName;
         private Label Password;
         private TextBox PasswordTextBox;
+        private Button RegisterButton;
+        private Label label1;
     }
 }

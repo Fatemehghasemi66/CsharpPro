@@ -53,7 +53,7 @@ public partial class SaveOrderForm : Form
         productDataGridView.DataSource = products;
         productDataGridView.Refresh();
     }
-    private bool SaveOrder (SaveOrderDto saveOrderDto)
+    private bool SaveOrder(SaveOrderDto saveOrderDto)
     {
         if (saveOrderDto is null)
             throw new Exception(message: "Please Pass saveOrderDto Object");
@@ -75,8 +75,8 @@ public partial class SaveOrderForm : Form
             Code = new Guid().ToString().Substring(1, 10)
         };
         int orderId = 0;
-        _orderRepository.AddItem(order,out orderId);
-        if(orderId >0)
+        _orderRepository.AddItem(order, out orderId);
+        if (orderId > 0)
         {
             for (int i = 0; i < saveOrderDto.Products.Count; i++)
             {
@@ -102,13 +102,13 @@ public partial class SaveOrderForm : Form
         Customer customer = new Customer();
         Address address = new Address();
         List<Product> products = new List<Product>();
-        SaveOrderDto saveOrderDto = new SaveOrderDto(Customer:customer,Products:products,Address:address);
+        SaveOrderDto saveOrderDto = new SaveOrderDto(Customer: customer, Products: products, Address: address);
         bool flag = SaveOrder(saveOrderDto);
         if (flag)
             MessageBox.Show("Order Saved");
         else
             MessageBox.Show("Order failed");
-        
+
     }
 
     private void productDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)

@@ -33,6 +33,7 @@
             SaveOrderButton = new Button();
             label1 = new Label();
             label2 = new Label();
+            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)customerDataGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)productDataGridView).BeginInit();
             SuspendLayout();
@@ -114,5 +115,6 @@
         private Button SaveOrderButton;
         private Label label1;
         private Label label2;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

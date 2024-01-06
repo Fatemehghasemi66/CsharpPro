@@ -8,25 +8,32 @@ using System.Globalization;
 
 namespace SharpPro.Models;
 [DebuggerDisplay("Customer {Id}: {FirstName} {LastName} whith {MobileNumber} Mobile")]
-public class Customer : BaseEntity <int>
+public class Customer : Users 
 {
-   public Customer() { }    
-   
 
-    public Customer(string username, string firstName, string lastName, DateTime? birthDate, string mobileNumber, Gender gender, string homeAddress,
-        string emailAddress,string password):base(false)
+    public Customer()
     {
+
+    }
+
+    public Customer(string username, string password, string firstName, string lastName, DateTime? birthDate, string mobileNumber, Gender gender, string homeAddress,
+        string emailAddress):base()
+
+    {
+
         UserName = username;
         Password = password;
         FirstName = firstName;
         LastName = lastName;
         MobileNumber = mobileNumber;
-        Email = emailAddress;
-        HomeAddress = homeAddress;
         Gender = gender;
         IsValidMobileNumber = true;
-        IsValidEmail = true;
         BirthDate = birthDate;
+        Email = emailAddress;
+        HomeAddress = homeAddress;
+        IsValidMobileNumber = true;
+        IsValidEmail = true;
+     
     }
 
     public string PersianBirthDate
@@ -45,18 +52,11 @@ public class Customer : BaseEntity <int>
         }
     }
 
-    public string UserName { get; set; }
-    public string Password { get; set; }
-    public string FirstName { get; set; }
-    public string LastName { get; set; }
-    public string MobileNumber { get; set; }
+    public int UserId { get; set; }
     public string Email { get; set; }
     public string HomeAddress { get; set; }
-    public bool IsValidMobileNumber { get; set; }
     public bool IsValidEmail { get; set; }
-    public DateTime? BirthDate { get; set; }
-    public Gender Gender { get; set; }
-    public object Value { get; }
+   
 
     public override bool IsActiveItem()
     {

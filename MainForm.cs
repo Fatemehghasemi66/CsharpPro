@@ -28,7 +28,7 @@ public partial class MainForm : Form
         _productRepository = new ProductRepository();
         _addressRepository = new AddressRepository();
         _orderRepository = new OrderRepository();
-        string logoImagePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Content", "Images", "MainLogo.png");
+        string logoImagePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Content", "Images", "Logo.jpg");
         logoPictureBox.ImageLocation = logoImagePath;
         logoPictureBox.SizeMode = PictureBoxSizeMode.Normal;
 

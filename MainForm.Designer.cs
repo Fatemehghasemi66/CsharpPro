@@ -105,6 +105,7 @@
             // 
             // logoPictureBox
             // 
+            logoPictureBox.BackColor = Color.Transparent;
             logoPictureBox.Location = new Point(308, 234);
             logoPictureBox.Name = "logoPictureBox";
             logoPictureBox.Size = new Size(918, 932);
@@ -116,7 +117,7 @@
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.NavajoWhite;
+            BackColor = Color.Black;
             ClientSize = new Size(1617, 1231);
             Controls.Add(logoPictureBox);
             Controls.Add(menuStrip1);
