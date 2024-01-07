@@ -140,4 +140,13 @@ public partial class SaveOrderForm : Form
         productDataGridView.DataSource = products;
         productDataGridView.Refresh();
     }
+
+    private void SearchCustomerButton_Click(object sender, EventArgs e)
+    {
+        List<Customer> customer = _customerRepository.GetIAll();
+        customerDataGridView.DataSource = null;
+        customer = customer.Where(x => x.MobileNumber.Contains(searchCustomerTextBox.Text)).ToList();
+        customerDataGridView.DataSource = customer;
+        customerDataGridView.Refresh();
+    }
 }
