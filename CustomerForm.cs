@@ -92,14 +92,14 @@ public partial class CustomerForm : Form
             gender: (Gender)GenderComboBox.SelectedItem
             );
             int customerId = 0;
-             _customerRepository.AddItem(item: customer, id: out customerId); ;
-           if(customerId == 0 )
+            _customerRepository.AddItem(item: customer, id: out customerId); ;
+            if (customerId == 0)
             {
                 MessageBox.Show("No Customer Inserted !!");
             }
 
             MessageBox.Show($"Customer Inserted Id: {customerId} ");
-               
+
         }
         catch (Exception ex)
         {

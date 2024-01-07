@@ -15,13 +15,16 @@ public class Product:BaseEntity<int>
         Price = price;
         Count = count;
         BrandName = brandName;
+     
+
     }
    
     public string Name { get; set; }
     public decimal Price { get; set; }
     public int Count { get; set; }
     public string BrandName { get; set; }
-
+  
+            
     public override bool IsActiveItem()
     {
         throw new NotImplementedException();
