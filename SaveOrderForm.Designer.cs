@@ -34,6 +34,8 @@
             label1 = new Label();
             label2 = new Label();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            SearchTextBox = new TextBox();
+            SearchButton = new Button();
             ((System.ComponentModel.ISupportInitialize)customerDataGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)productDataGridView).BeginInit();
             SuspendLayout();
@@ -47,6 +49,7 @@
             customerDataGridView.RowHeadersWidth = 82;
             customerDataGridView.Size = new Size(2162, 409);
             customerDataGridView.TabIndex = 0;
+            customerDataGridView.CellContentClick += customerDataGridView_CellContentClick_1;
             // 
             // productDataGridView
             // 
@@ -73,7 +76,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(1035, 200);
+            label1.Location = new Point(987, 747);
             label1.Name = "label1";
             label1.Size = new Size(131, 32);
             label1.TabIndex = 3;
@@ -82,11 +85,29 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(989, 766);
+            label2.Location = new Point(924, 179);
             label2.Name = "label2";
             label2.Size = new Size(152, 32);
             label2.TabIndex = 4;
             label2.Text = "CustomerList";
+            // 
+            // SearchTextBox
+            // 
+            SearchTextBox.Location = new Point(211, 47);
+            SearchTextBox.Name = "SearchTextBox";
+            SearchTextBox.Size = new Size(403, 39);
+            SearchTextBox.TabIndex = 5;
+            SearchTextBox.TextChanged += textBox1_TextChanged;
+            // 
+            // SearchButton
+            // 
+            SearchButton.Location = new Point(327, 109);
+            SearchButton.Name = "SearchButton";
+            SearchButton.Size = new Size(150, 46);
+            SearchButton.TabIndex = 6;
+            SearchButton.Text = "Search";
+            SearchButton.UseVisualStyleBackColor = true;
+            SearchButton.Click += SearchButton_Click;
             // 
             // SaveOrderForm
             // 
@@ -94,6 +115,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             ClientSize = new Size(2210, 1467);
+            Controls.Add(SearchButton);
+            Controls.Add(SearchTextBox);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(SaveOrderButton);
@@ -116,5 +139,7 @@
         private Label label1;
         private Label label2;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private TextBox SearchTextBox;
+        private Button SearchButton;
     }
 }

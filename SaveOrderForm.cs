@@ -50,6 +50,8 @@ public partial class SaveOrderForm : Form
     {
         List<Product> products = _productRepository.GetIAll();
         productDataGridView.DataSource = null;
+
+        products = products.Where(x => x.Name.Contains(SearchTextBox.Text)).ToList();
         productDataGridView.DataSource = products;
         productDataGridView.Refresh();
     }
@@ -118,5 +120,24 @@ public partial class SaveOrderForm : Form
     private void customerDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
     {
 
+    }
+
+    private void textBox1_TextChanged(object sender, EventArgs e)
+    {
+
+    }
+
+    private void customerDataGridView_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+    {
+
+    }
+
+    private void SearchButton_Click(object sender, EventArgs e)
+    {
+        List<Product> products = _productRepository.GetIAll();
+        productDataGridView.DataSource = null;
+        products = products.Where(x => x.Name.Contains(SearchTextBox.Text)).ToList();
+        productDataGridView.DataSource = products;
+        productDataGridView.Refresh();
     }
 }
